@@ -21,8 +21,8 @@ button{cursor:pointer;border:none}
 .app{min-height:100vh;display:flex;flex-direction:column}
 .hdr{background:var(--nv);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 4px 12px rgba(0,0,0,.2)}
 .hl{display:flex;align-items:center;gap:10px}
-.logo{height:36px;width:36px;object-fit:contain;border-radius:6px}
-.logo-ph{width:36px;height:36px;background:rgba(255,255,255,.15);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.logo-ph{width:36px;height:36px;background:rgba(255,255,255,.15);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.logo-img{width:36px;height:36px;border-radius:6px;object-fit:contain}
 .ht{font-weight:700;font-size:16px;color:#fff}
 .hs{font-size:12px;color:#90e0ef}
 .main{flex:1;padding:16px;max-width:960px;margin:0 auto;width:100%}
@@ -32,7 +32,7 @@ button{cursor:pointer;border:none}
 .cd{font-size:12px;color:var(--t2);margin-top:2px}
 .cb{padding:16px}
 .tbr{display:flex;flex-wrap:wrap;gap:4px;background:var(--sur);border:1px solid var(--bd);border-radius:10px;padding:4px;margin-bottom:16px}
-.tb{flex:1;min-width:52px;padding:6px 5px;border-radius:7px;font-size:11px;font-weight:500;background:transparent;color:var(--t2);border:none;cursor:pointer;transition:all .15s}
+.tb{flex:1;min-width:52px;padding:6px 5px;border-radius:7px;font-size:11px;font-weight:500;background:transparent;color:var(--t2);border:none;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:3px}
 .tb:hover{background:var(--bg);color:var(--tx)}
 .tb.on{background:var(--pr);color:#fff}
 .btn{padding:7px 14px;border-radius:8px;font-size:13px;font-weight:500;display:inline-flex;align-items:center;gap:6px;cursor:pointer;border:none;transition:all .15s}
@@ -43,12 +43,7 @@ button{cursor:pointer;border:none}
 .bi{padding:6px;border-radius:7px}
 .btn:disabled{opacity:.5;cursor:not-allowed}
 .bge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600}
-.bb{background:var(--pl);color:var(--pd)}
-.bg2{background:var(--kl);color:#065f46}
-.bw{background:var(--wl);color:#92400e}
-.br2{background:var(--el);color:#991b1b}
-.by{background:var(--bg);color:var(--t2)}
-.bn{background:#1a3a6e;color:#90e0ef}
+.bb{background:var(--pl);color:var(--pd)}.bg2{background:var(--kl);color:#065f46}.bw{background:var(--wl);color:#92400e}.br2{background:var(--el);color:#991b1b}.by{background:var(--bg);color:var(--t2)}.bn{background:#1a3a6e;color:#90e0ef}
 .fld{margin-bottom:12px}
 .fld label{display:block;font-size:12px;font-weight:600;color:var(--t2);margin-bottom:4px;text-transform:uppercase;letter-spacing:.03em}
 .inp{width:100%;padding:8px 10px;border:1px solid var(--bd);border-radius:8px;background:var(--sur);color:var(--tx);outline:none;transition:border-color .15s}
@@ -91,7 +86,6 @@ button{cursor:pointer;border:none}
 .cp.off{background:var(--s2);color:var(--t2);border-color:var(--bd)}
 .als{background:var(--kl);color:#065f46;border:1px solid #a7f3d0;padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:10px}
 .alw{background:var(--wl);color:#92400e;border:1px solid #fcd34d;padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:10px}
-.ale{background:var(--el);color:#991b1b;border:1px solid #fca5a5;padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:10px}
 .cbx{width:18px;height:18px;border-radius:5px;border:2px solid var(--bd);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;vertical-align:middle;transition:all .15s}
 .cbx.on{background:var(--ok);border-color:var(--ok)}
 .cr{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;cursor:pointer;border:1px solid transparent;margin-bottom:5px;transition:background .12s}
@@ -122,123 +116,119 @@ button{cursor:pointer;border:none}
 .lwd{background:#fff;border-radius:16px;padding:36px;width:100%;max-width:360px;box-shadow:0 8px 32px rgba(0,0,0,.3);text-align:center}
 .pin{width:100%;padding:14px;font-size:22px;letter-spacing:.25em;text-align:center;border:2px solid var(--bd);border-radius:10px;outline:none;transition:border-color .15s;margin-bottom:12px;font-family:monospace}
 .pin:focus{border-color:var(--pr)}
-.login-btn{width:100%;padding:12px;font-size:15px;font-weight:600;background:var(--pr);color:#fff;border-radius:10px;cursor:pointer;border:none;transition:background .15s}
+.login-btn{width:100%;padding:12px;font-size:15px;font-weight:600;background:var(--pr);color:#fff;border-radius:10px;cursor:pointer;border:none}
 .login-btn:hover{background:var(--pd)}
 .spin{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle}
 @keyframes spin{to{transform:rotate(360deg)}}
-.loading{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0e1f3d,#0a3060)}
+.loading-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0e1f3d,#0a3060)}
 .loading-inner{text-align:center;color:#fff}
-.loading-inner .spin{width:32px;height:32px;border-width:3px;margin-bottom:12px}
+.spin-lg{width:40px;height:40px;border:3px solid rgba(255,255,255,.2);border-top-color:#00b4d8;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
 .dn{display:flex;gap:6px;align-items:center}
 .dn .inp{flex:1}
+.saving-toast{position:fixed;bottom:20px;right:20px;background:var(--nv);color:#fff;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:600;z-index:999;display:none;align-items:center;gap:8px}
+.saving-toast.show{display:flex}
 </style>
 </head>
 <body>
-<div id="root"><div class="loading"><div class="loading-inner"><div class="spin"></div><div style="font-size:16px;font-weight:600;margin-top:8px">Loading AquaCats...</div></div></div></div>
-<script>
-const SUPA_URL = "https://cjzqfbrtqattbnwbiyft.supabase.co";
-const SUPA_KEY = "sb_publishable_PiT6Nzh3aoHL6dJVChnJ8w_SuVJcOfH";
-const MD = {"mod1": {"h": {"ey": "Start Here \u00b7 Complete Before Any Level Module", "ti": "The Basicsof Swimming", "su": "Before you teach a single skill, you need to understand why our methods work. This module covers the four core principles that every AquaCats technique is built on.", "tg": ["\ud83c\udf0a Buoyancy", "\ud83d\udcd0 Body Position", "\ud83d\udca8 Momentum", "\ud83d\udd04 Coordination", "\ud83e\udde0 Mental Readiness"], "bn": "You were brought here because we believe you're capable of more than just teaching swim lessons. At AquaCats, we don't teach randomly and we don't improvise. Every skill has a purpose. Every progression is intentional. Your job is not to rush. Your job is not to play. Your job is to execute the Aqua"}, "q": "https://docs.google.com/forms/d/e/1FAIpQLSc4NttTL-b0QmYzb9TJYq_fjNeneANSgrAqlKzh-yOicN1cDA/viewform", "s": [{"h": "Watch This First", "p": "A message from your head coach before you begin"}, {"h": "Buoyancy & Body Position", "p": "The foundation of every AquaCats method"}, {"h": "Momentum", "p": "How swimmers learn to move from Point A to Point B"}, {"h": "Coordination", "p": "How the body works together instead of against itself"}, {"h": "Mental Readiness", "p": "A relaxed mind leads to a better swimmer \u2014 always"}, {"h": "How All Four Work Together", "p": "When one fails, the swimming fails \u2014 this is why teaching must be flexible"}], "w": [{"l": "The Most Important Thing to Understand", "t": "Have you ever watched someone struggling to swim? They are almost always vertical \u2014 jolting up and down, splashing their arms, fighting the water. That vertical posture creates resistance, causes sink"}, {"l": "What Is Momentum?", "t": "Momentum is achieved when the swimmer is horizontal AND coordinating their kicks and arms together. It is not just kicking hard \u2014 it is the combination of correct body position, consistent kicks, and "}, {"l": "What Is Coordination?", "t": "Coordination is the ability to synchronize the different parts of the body \u2014 kicks, arms, head position, breath, and core \u2014 so they work together instead of competing against each other. Water rewards"}, {"l": "Why This Principle Matters", "t": "Fear, separation anxiety, and uncertainty create physical tension. Physical tension directly reduces buoyancy. A tense child sinks. A relaxed child floats. This is not metaphor \u2014 it is physics. Your a"}], "b": ["Buoyancy is the natural force that pushes the body upward in water. Swimmers do not need to \"try\" to float \u2014 the water does the work automatically.", "When the body is horizontal, buoyancy lifts the swimmer toward the surface, floating becomes easier, and forward movement requires less effort.", "Children under 1 are the most naturally buoyant they will ever be. As they age, this natural buoyancy decreases. This is why we recommend starting les", "When the head lifts to look forward, the hips immediately drop and the body goes vertical. This is the single most common beginner problem.", "For beginners, we teach them to look down \u2014 this keeps the head, neck, spine, and hips in one long horizontal line.", "When swimmers cannot maintain this on their own, we use the Occipital Push \u2014 gentle guidance at the base of the skull \u2014 to physically teach the correc", "Even with the head correctly positioned, the swimmer will sink if the hips drop.", "We use the Hip Grab to support the hips and train them to stay at the surface.", "With repetition and consistency, the hips develop the muscle memory to stay horizontal. Failing to correct the hips will revert all progress.", "Beginners do not yet understand water direction, propulsion, or how their body should move through water. They rely on the instructor to guide them.", "By giving forward guidance, the instructor helps the swimmer feel how the body moves through water, understand that swimming has a direction, and expe", "Once a swimmer understands that the goal is to move from Point A to Point B, they naturally begin creating their own momentum through kicking and arm ", "The Blast Off method gives the swimmer a controlled forward push \u2014 they feel what correct momentum through water feels like.", "This trains the body to move in the correct direction and helps the swimmer understand that swimming is purposeful forward movement.", "Like all AquaCats methods, Blast Off serves multiple purposes \u2014 it builds momentum, trains body position, and begins kick coordination all at once.", "\u2713Fast, uniform, small kicks: Create steady propulsion and keep legs near the surface. This improves buoyancy and momentum together.", "\u2717Kicks too big or bending knees too much: Pushes water up and down instead of backward \u2014 this lifts and drops the body rather than moving it forward.", "\u2717Irregular kicks (slow\u2013fast\u2013stop\u2013start): Breaks momentum and can keep the swimmer stuck in place.", "\u2717Overly splashy kicks: Wastes energy without creating actual propulsion.", "!Kicks and arm movements cancel each other out", "!The head lifts, causing hips to sink immediately", "!The body goes vertical instead of horizontal", "!Momentum disappears \u2014 swimming feels exhausting", "Every child is different. Some respond to verbal praise. Some respond to toys. Some respond to physical affection \u2014 hugs, high fives, gentle encourage", "Crying does not mean not ready. A child's skills and body adjustments determine readiness \u2014 not their emotional expression. Crying is normal. Panic, b", "Use rewards strategically \u2014 after every successful rep, give them what they respond to. This is how you build cooperation and make the lesson work wit", "Build trust before pushing skills. A swimmer who trusts you will attempt things a swimmer who doesn't trust you will refuse entirely."]}, "mod2": {"h": {"ey": "Complete After Module 1 \u00b7 Before Level 0", "ti": "Classroom,Handling &The Parent", "su": "How you physically handle swimmers, manage the pool environment, and build the parent relationship are just as important as any technique. This module covers all three.", "tg": ["\ud83e\udd1d Proximity & Safety", "\ud83c\udf93 Step as Classroom", "\ud83c\udf99\ufe0f Coach Voice", "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67 Parent Relationship", "\ud83e\udd6a Sandwich Technique"], "bn": ""}, "q": "https://docs.google.com/forms/d/e/1FAIpQLSdzGEQRQLBuaK733hxJ_E_hVjyEAKI9OQ8VIfAUl8PP3DNCeA/viewform", "s": [{"h": "Proximity & Safety Control", "p": "The non-negotiable foundation of every lesson"}, {"h": "The Step as Classroom", "p": "Structure exists even in the water"}, {"h": "Coach Voice", "p": "A required safety skill \u2014 your voice shapes everything"}, {"h": "The Parent Relationship", "p": "If you have the parent on your side, you are golden"}, {"h": "The Sandwich Technique & Trust", "p": "How you communicate with parents and swimmers matters as much as what you communicate"}, {"h": "The Golden Standard", "p": "If you do these things, you will be golden"}], "w": [{"l": "Why This Is Non-Negotiable", "t": "Poor proximity control is the most dangerous mistake a new instructor can make. The risks happen fast \u2014 running from the instructor, jumping unexpectedly, panic responses, and unsafe water entries. By"}, {"l": "Why the Step Matters", "t": "The step is not just a place to sit. It is the classroom, the reset zone, the reward location, and the safety point all in one. Teaching swimmers to respect the step teaches them that structure exists"}, {"l": "Why This Matters", "t": "An instructor's voice directly affects swimmer behavior and emotional state. A hesitant voice creates an uncertain swimmer. A frantic voice creates a scared swimmer. A calm, confident, consistent voic"}, {"l": "What a Strong Coach Voice Does", "t": "Builds trust \u00b7 Reduces chaos \u00b7 Prevents unsafe behavior \u00b7 Improves swimmer response to verbal cues \u00b7 Creates comfort and predictability. Tone matters as much as the words themselves. A swimmer who hea"}, {"l": "The Most Important One \u2014 Describing Progress", "t": "Parents may not be able to see progress clearly \u2014 especially early on. Your job is to narrate it for them. \"Today she held her breath for the first time without any cup pour \u2014 that is a huge step.\" \"H"}, {"l": "What It Is", "t": "The Sandwich Technique is how you deliver feedback to parents about their child. It keeps communication positive, honest, and constructive \u2014 without discouraging the parent or making them defensive. U"}], "b": ["Keep the swimmer between your body and the wall when possible \u2014 you are the barrier between them and open water.", "Anticipate movement before it happens. Watch their eyes, their weight shift, their body language. Move before they do.", "Never turn your back on a beginner swimmer \u2014 not even for a second.", "If a child attempts to leave the step, gently support them and guide them back. Teach them that the step is where they stay \u2014 the same way a kindergar", "Sit when arriving: Every time a swimmer returns to the step, they sit. Non-negotiable. Teach it from session one.", "Hands on step when waiting: Hands stay on the edge. This prevents unexpected movement and builds the habit of controlled positioning.", "Return to step after every drill: Every swim ends at the step. Every drop ends at the step. The step is always home base.", "Use toys to encourage sitting and waiting \u2014 give them something to do at the step so staying there feels rewarding.", "\"Clean up\" games to restore calm \u2014 scatter toys, ask for help picking them up. Redirects attention instantly.", "Rhythm activities (counting, singing) to regulate breathing and emotions.", "Never force skill work while a swimmer is dysregulated. Use play to regulate first, then work.", "Throw toys and ask for help retrieving them \u2014 gives the swimmer a job, reduces focus on fear.", "Sing or count aloud during drills \u2014 rhythm regulates breathing and emotion.", "Turn drills into games \u2014 \"Can you catch the toy?\" is more powerful than \"Do the drill.\"", "Redirect attention before dysregulation peaks \u2014 read the swimmer and intervene early.", "\u2713If you say one more swim, do one more swim. Period.", "\u2713Use consistent commands \u2014 the same word always means the same thing.", "\u2713Follow through on rewards \u2014 if they earn it, they get it.", "\u2713Never surprise them with water contact \u2014 1-2-3 before everything, always.", "\u2713Be punctual \u2014 show up when you say you will, every time.", "\u2713Be transparent \u2014 tell them what you are working on and why.", "\u2713Answer questions confidently and honestly \u2014 if you don't know, say you'll find out.", "\u2713Always have your hands visible \u2014 you are in their home, with their child.", "Swimmer name and current level \u2014 confirm which level they are working in that session.", "Skills worked on \u2014 what techniques were practiced, how many reps, what the focus was.", "Achievement tracker \u2014 note any milestones hit. First independent breath hold, first wall catch without guidance, first full SRS cycle, etc.", "What to focus on next session \u2014 so you or any other coach picks up exactly where this session left off.", "Progress is communicated in person at the end of each lesson using the Sandwich Technique.", "Use specific language \u2014 not \"she did great today\" but \"she held her breath on cue three times without the cup pour \u2014 that is a real breakthrough.\"", "The EOD log backs up what you tell parents. If they ever ask for details, you have them."]}, "safety": {"h": {"ey": "Complete Before Your First Lesson \u00b7 Non-Negotiable", "ti": "Safety First.Always.", "su": "Every rule in this module exists because someone, somewhere, didn't follow it and something went wrong. These are not suggestions. They are standards. Know them. Follow them. Every lesson, every time.", "tg": ["\ud83d\udea8 Emergency Protocol", "\ud83c\udfca Pool Environment", "\ud83d\udc41\ufe0f Supervision", "\u26c8\ufe0f Weather", "\ud83e\uddfc Hygiene"], "bn": ""}, "q": null, "s": [{"h": "Emergency Protocol", "p": "Know this before you ever get in the water"}, {"h": "Supervision \u2014 The Non-Negotiables", "p": "These rules exist because accidents happen in seconds"}, {"h": "Pool Environment Safety", "p": "Before every lesson \u2014 check everything"}, {"h": "Weather Safety", "p": "Check before you leave \u2014 not when you arrive"}, {"h": "Injury & Incident Protocol", "p": "Know exactly what to do before anything happens"}, {"h": "Pre-Lesson Safety Checklist", "p": "Run through this before every single lesson"}], "w": [{"l": "Why You Must Know This Before Lesson One", "t": "Emergencies do not give you time to think. Your response must be automatic. Read this, understand it, and commit it to memory now \u2014 not after something happens."}, {"l": "Why This Rule Exists", "t": "A child can go under in two seconds. Two seconds is all it takes. When your back is turned \u2014 to grab equipment, to speak to a parent, to check your phone \u2014 you have lost those two seconds. Keep your e"}, {"l": "This Is a Termination-Level Rule", "t": "Being on your phone during a lesson is not just unprofessional \u2014 it is dangerous. You are in a home pool with a child. Parents are watching. Cameras are recording. And more importantly, a child can dr"}, {"l": "Why You Control Every Entry", "t": "Uncontrolled entries are how children get hurt. A child who jumps in without warning can land on you, land on another swimmer, or enter at an angle that causes injury. Every entry is controlled, predi"}, {"l": "Why This Rule Exists", "t": "You are entering a home with a child whose full medical history you do not know. Allergies to nuts, dairy, gluten, and other foods can be severe and life-threatening. A child does not need to eat your"}, {"l": "Why Gates Matter", "t": "An open gate is an invitation for a child to walk into a pool unsupervised. Pool gates exist for one reason \u2014 to keep children out of the water unless an adult is present. Closing gates is not optiona"}], "b": ["Set up all equipment and toys before the swimmer enters the pool so you never have to look away during the lesson.", "If a parent speaks to you during a lesson, keep eyes on the swimmer and respond without turning. The swimmer comes first.", "Position yourself between the swimmer and open water at all times \u2014 you are the last line of defense.", "Watch swimmers near the wall \u2014 getting too close to the wall is a head and body injury risk. Guide them away.", "Put your phone in your bag before entering the pool area.", "If you need to use your phone for music or timing \u2014 set it up before the lesson begins and do not touch it again.", "If there is a genuine emergency requiring your phone \u2014 get the swimmer out of the water and secure first.", "Walk swimmers in and out of the pool every time \u2014 never let them run or jump in independently.", "If a swimmer attempts to jump without command \u2014 stop the lesson, calmly guide them back, and reinforce the rule.", "Jumps and entries only happen when you are positioned, ready, and have given the command.", "No food of any kind in the pool area during a lesson \u2014 not for you, not for the swimmer.", "If a family offers you food before or after a lesson, be gracious but be aware of where you eat and wash hands thoroughly before handling the swimmer.", "If you are aware of a swimmer's specific allergy \u2014 note it and ensure nothing in your bag could be a trigger.", "Check that all gates are closed and latched when you arrive.", "Close every gate behind you as you move through the pool area.", "Before you leave \u2014 walk the perimeter. Every gate closed and latched.", "If a gate is broken or won't latch \u2014 notify the family immediately. Do not ignore it.", "Remove all toys from the pool and pool deck at the end of every lesson.", "Do not leave any toys within reach of the pool edge.", "Store toys in a bag or container away from the pool area \u2014 out of sight, out of reach.", "During the lesson \u2014 only have the toys you are actively using in or near the water. Put others away.", "Check for fecal matter \u2014 if you see or suspect poop in the pool, do not enter. Notify the family and reschedule. This is non-negotiable.", "Check water clarity \u2014 if you cannot see the bottom of the pool clearly, the water is not safe for a lesson.", "Check for debris \u2014 leaves, insects, or foreign objects should be removed before the lesson begins.", "Note chemical concerns \u2014 strong chemical smell, skin irritation, or eye irritation are signals that the water chemistry is off. Reschedule if in doubt", "Check a weather radar app before leaving for every lesson \u2014 look for lightning activity within 10 miles.", "If lightning is detected within 10 miles \u2014 contact the family immediately and reschedule. Do not travel.", "If a storm develops during a lesson \u2014 exit the pool immediately. Get the swimmer and yourself out of the water and away from the pool area.", "Do not re-enter the pool until at least 30 minutes after the last lightning strike within 10 miles."]}, "l0": {"h": {"ey": "Coach Training \u2014 Complete Before Pool", "ti": "Level 0Infant & Toddler Foundations", "su": "This module walks you through every technique used at Level 0. Read each section, then watch the video before applying it poolside. Complete the quiz at the end.", "tg": ["\ud83e\udd1d Trust", "\ud83d\udca8 Breath Control", "\ud83d\udcd0 Body Position", "\ud83d\udde3\ufe0f Pool Language", "\ud83c\udf0a Floating Readiness"], "bn": ""}, "q": "https://docs.google.com/forms/d/e/1FAIpQLSfhpNntN_pDXDH_SRXJ41xFfT5hhOiFxst2_seXAkVpaQIkVw/viewform?usp=header", "s": [{"h": "Purpose of Level 0", "p": "What you are building and why it matters"}, {"h": "Level 0 Techniques", "p": "Read each section fully, then watch the video before using poolside"}, {"h": "Lesson Flow", "p": "Every session follows this structure \u2014 but time spent on each step is your call"}, {"h": "Exit Criteria", "p": "All must be met before advancing to Level 1"}], "w": [{"l": "Why This Is Non-Negotiable", "t": "The step is the classroom, the safety point, and the reset zone. Everything at Level 0 happens at or near the step. A swimmer who can sit, balance, and catch the step is a safer swimmer \u2014 and a swimme"}, {"l": "Why Head Position Matters", "t": "When a swimmer lifts their head, their hips drop, their kick becomes ineffective, and they go vertical. One small correction at the back of the skull fixes everything downstream \u2014 head down means hips"}, {"l": "Why These Work Together", "t": "These are all methods of moving the swimmer between Point A (coach) and Point B (step). In a real lesson you transition between them based on how the swimmer is responding. The goal at Level 0 is alwa"}, {"l": "Start Easy \u2014 Even If You Know They Can Do More", "t": "Always begin at the easiest version of floating, every session, even if the swimmer did well last time. Starting easy builds confidence, reestablishes trust, and lets you assess where they are today b"}, {"l": "Why We Introduce It Here", "t": "Choo-Choo is how a swimmer moves along the wall hand-over-hand to reach the step. At Level 0, we introduce the concept simply \u2014 after any wall contact, guide the swimmer's hands along the wall toward "}, {"l": "Goal", "t": "Get the swimmer regulated, comfortable, and engaged before any skill work begins. A dysregulated swimmer cannot learn."}], "b": ["Start with cup pours on the shoulder \u2014 never the face first. Let the swimmer feel water in a non-threatening way.", "Always cue \"1\u2026 2\u2026 3\u2026\" before water contact. Cue MMM first to prompt mouth closure.", "Stay animated and positive \u2014 your energy directly shapes how the swimmer responds.", "Progress to face pours only when the swimmer anticipates the count and closes their mouth.", "As the swimmer learns to hold their breath on cue, begin small dunks \u2014 very brief at first, a split second. Never hold them under. Build gradually.", "Always cue 1-2-3 before every dunk. As breath control improves, dunks can become slightly longer each session.", "Include manual swims to coach during this block \u2014 as they hold their breath, swim them toward you at the step. Short distances, full support. This com", "Have swimmer blow bubbles into the water at the step \u2014 playful and low-stakes breath control practice.", "Demonstrate first. Make it fun. Progress to chin, then mouth, then full face.", "Watch the swimmer's cry cycle \u2014 there is always a brief moment between cries where the mouth closes and a breath is taken.", "Time your dunk to that exact moment of breath intake. Swimmer goes under with air \u2014 not mid-cry.", "Before any step sequence, figure out what this swimmer responds to \u2014 verbal praise, hugs, toys, songs. Every child is different. Find their currency e", "Use the Clean Up game to regulate a crying swimmer: scatter toys, ask them to help put them away. Redirects attention and reduces anxiety immediately.", "Once you know what they respond to \u2014 use it strategically as a reward after every successful rep. \"Do the thing, get the reward.\" This is how you buil", "Never force skill work while the swimmer is dysregulated. Regulation always comes first.", "Lower the swimmer to sit on the step with full instructor support.", "Hold until they are balanced and calm \u2014 do not rush this.", "Many swimmers resist sitting at first. Stay calm, hold position, and let them adjust. Repetition teaches comfort.", "Hold both of the swimmer's hands and walk them side to side along the step.", "Watch for progress over sessions: both hands \u2192 one hand \u2192 no hands. That progression is pool balance developing \u2014 it is a real milestone.", "Camina builds spatial familiarity with the pool edge and develops balance needed for everything that follows.", "Bring swimmer's arms out in front of them \u2014 you will need to physically adjust their arms for them at first. They will not do this naturally.", "Guide their hands to catch the TOP of the step \u2014 not the side, not the ledge. The top edge.", "Cue \"Superman hands!\" every time. After catch: sit up, reward immediately. Consistent reward builds the habit that makes this automatic.", "Begin face-out. Progress to face-in as comfort grows."]}, "l1": {"h": {"ey": "Coach Training \u2014 Complete Before Pool \u00b7 Prerequisite: Level 0", "ti": "Level 1Survival Mastery& SRS Intro", "su": "Level 1 has two phases. Phase 1 is drop test mastery \u2014 this is the primary focus. Phase 2 is Swim Roll Swim, introduced only after survival readiness is established. Read everything before going poolside.", "tg": ["\ud83c\udfaf Drop Test Mastery", "\ud83c\udf0a Swim Roll Swim", "\ud83e\uddf1 Two Pathways", "\ud83d\udd12 Safety Test Gate"], "bn": ""}, "q": "https://docs.google.com/forms/d/e/1FAIpQLSdQPM-nFMr1NyN_AVr35Um-mX9KZJhvxtH2LZrvdtZKCqDcHA/viewform?usp=header", "s": [{"h": "Level 1 Structure & Purpose", "p": "Two phases \u2014 understand both before you start"}, {"h": "Drop Test Philosophy", "p": "What mastery means and why it matters"}, {"h": "Two Pathways \u2014 Choose One", "p": "Assess the swimmer and select the pathway that fits them best"}, {"h": "Drop Test Progression \u2014 Phases A through E", "p": "Every drop type runs through all five phases before moving to the next type"}, {"h": "Drop Techniques \u2014 Watch Video First", "p": "Read each technique, then watch before using poolside"}, {"h": "What Success Looks Like \u2014 Both Pathways", "p": "Watch a swimmer completing each pathway before using it poolside"}], "w": [{"l": "Key Mechanic \u2014 Training the Head to Shift Up", "t": "The entire vertical drop is built on one thing: training the swimmer to shift their head upward after entry. When the head goes up, the body follows and naturally reaches horizontal float. This does n"}, {"l": "Key Mechanic", "t": "Swimmer enters face-down horizontal. Arm tuck (one under, one over) + OSH keeps hips on waterline. Lateral flip only \u2014 no vertical recovery. Body stays A to B on the waterline. This is the exact same "}, {"l": "Key Mechanic", "t": "Swimmer is flipped into the water in a disoriented position. Must orient and recover regardless of landing position. Instructor stays close and ready to assist at all times."}, {"l": "What to Look For", "t": "Swimmer enters, surfaces, shifts head up independently, body reaches horizontal, holds calm float. Instructor comes to them \u2014 they do not need to reach the wall. This is the standard."}, {"l": "Key Mechanic", "t": "Both hands on hips. Swimmer swims. Cue ROLL. Guide arm tuck + hip pressure \u2192 lateral rotation \u2192 hips on waterline \u2192 float 8\u201310 sec. Instructor picks up. Done. No rolling back at Level 1."}, {"l": "Key Mechanic", "t": "Swimmer swims independently. One hand guides hip rotation on cue only. Float on single forearm. Cue calm breathing. Pick up. Extend swim phase as strength builds."}], "b": ["Swimmer enters water vertically \u2014 head leads the descent.", "Cue \"Look Up\" immediately on entry \u2014 eyes and chin lift.", "Use U support to guide head upward after entry \u2014 physically train the movement until swimmer begins doing it independently.", "Head lifting causes body to follow to horizontal float position.", "Swimmer enters face-down horizontal.", "Arm tuck: one arm under, one arm over the body.", "OSH (Over-the-Shoulder): instructor guides hip rotation \u2014 lateral flip only.", "Hips stay on the waterline throughout \u2014 no vertical recovery.", "Swimmer enters in a disoriented position \u2014 no controlled entry angle.", "Swimmer must orient themselves regardless of how they land.", "Instructor remains close and ready to assist if needed.", "Swimmer chooses correct recovery based on their position.", "Toy demo first \u2014 toy goes in, turns, grabs wall. Swimmer watches and understands the goal.", "Fully supported entry \u2014 instructor turns swimmer and guides to wall.", "Progress: reduce support \u2192 increase distance from wall \u2192 eventually toss.", "Choo-Choo (hand-over-hand) along wall to step.", "Once swimmer reaches the wall, guide their hands to grip the edge.", "Cue \"Choo-Choo!\" \u2014 demonstrate hand-over-hand motion along the wall toward the step.", "Guide their hands at first \u2014 move one hand, then the other, like a train on a track.", "Progress: full guidance \u2192 partial guidance \u2192 verbal cue only \u2192 fully independent.", "Swimmer starts at step. Cue exaggerated \"1-2-3 breathe.\"", "Swimmer swims forward 6\u201310 seconds.", "Cue: \"Roll\" \u2014 instructor applies gentle hip pressure to initiate rotation.", "Guide arm tuck + lateral rotation \u2014 hips stay on waterline throughout.", "Instructor maintains arm-length distance during swim phase.", "Swimmer swims forward independently \u2014 no contact during swim.", "On cue \"Roll\" \u2014 one hand only guides hip rotation.", "Float is supported on single forearm only.", "One hand on shoulder guides rotation from front to back.", "Shoulder leads the lateral flip \u2014 hips follow.", "Same waterline goal as OSH \u2014 hips stay up throughout.", "Never force \u2014 guide only."]}, "l2": {"h": {"ey": "Coach Training \u2014 Complete Before Pool \u00b7 Prerequisite: Level 1", "ti": "Level 2SRS Independence& Endurance", "su": "Level 2 is where the hands come off. Swimmers already know how to do SRS \u2014 now they learn to own it. Your job shifts from teaching to observing, cueing, and letting them struggle appropriately.", "tg": ["\ud83e\udde0 Decision-Making", "\ud83d\udcaa Endurance", "\ud83e\udd32 Hands Off", "\ud83c\udfaf Drop Test Mastery", "\ud83d\udcd0 Body Position"], "bn": ""}, "q": "https://docs.google.com/forms/d/e/1FAIpQLSf5WeNNB8dAcg3nZz9IjWbdG0tyMrLVsLOx39Z8usZft56FMg/viewform?usp=header", "s": [{"h": "Purpose of Level 2", "p": "What changes from Level 1 and why"}, {"h": "The Critical Skill \u2014 Body Position During Roll", "p": "This is the primary correction focus at Level 2 \u2014 understand it fully"}, {"h": "Techniques \u2014 Watch Video First", "p": "Read each one fully, then watch before using poolside"}, {"h": "Lesson Flow", "p": "Follow this every session. Do not skip steps. Structure stays the same \u2014 independence increases."}, {"h": "Exit Criteria", "p": "ALL must be met before advancing to Level 3 \u2014 no exceptions"}], "w": [{"l": "What OSH Two-Handed Does", "t": "This is where every swimmer starts at Level 2. Both hands on the hips give the instructor full control of the rotation \u2014 guiding the swimmer from belly to back smoothly along the waterline. The swimme"}, {"l": "What OSH One-Handed Does", "t": "Once the swimmer knows the mechanic, one hand is enough. The instructor stays close but reduces contact \u2014 one hand provides only the minimum pressure needed to keep hips horizontal and guide the roll."}, {"l": "What PSR One-Handed Does", "t": "Some swimmers lead movement with their arms and upper body rather than their hips. For these swimmers, guiding the shoulder into rotation is more natural than guiding the hip. One hand on the shoulder"}, {"l": "What PSR Two-Handed Does", "t": "For upper-body dominant swimmers who need more guidance, two hands on the shoulders give fuller control of the rotation. Same lateral flip goal \u2014 guide from belly to back along the waterline. Progress"}, {"l": "Why This Is Its Own Technique", "t": "The arm tuck and over is the body mechanic that allows a swimmer to rotate without going vertical. Without the correct arm position, the roll cannot execute cleanly along the waterline. Every coach mu"}, {"l": "Why the Hand Signal Matters", "t": "Once a swimmer is moving independently, they may not hear the verbal cue clearly underwater or at distance. The hand signal gives a visual backup \u2014 the swimmer sees it and rolls. Together, voice and s"}], "b": ["Both hands on swimmer's hips during the swim phase \u2014 maintain horizontal alignment.", "Cue \"Roll\" verbally and with hand signal before initiating rotation.", "Guide hip rotation smoothly \u2014 lateral flip along the waterline, not vertical.", "Support float across both forearms \u2014 8\u201312 seconds, calm breathing.", "One hand on swimmer's hip \u2014 light upward pressure, not a grip.", "Maintain horizontal alignment during swim phase \u2014 prevent hips from dropping.", "Cue \"Roll\" verbally and with hand signal \u2014 delay hands, let them try first.", "Guide rotation with one hand if needed \u2014 release immediately once it begins.", "Cue \"Roll\" verbally and with hand signal before contact.", "One hand on shoulder \u2014 guide horizontal rotation from belly to back.", "Keep motion smooth and lateral \u2014 no vertical displacement.", "Release immediately once rotation begins.", "Cue \"Roll\" verbally and with hand signal before contact.", "Both hands on shoulders \u2014 guide lateral rotation from belly to back.", "Keep motion smooth and along the waterline \u2014 no lifting or vertical movement.", "Release as soon as rotation is established.", "On the roll cue, one arm tucks under the body \u2014 this creates the rotation axis.", "The other arm comes over \u2014 this drives the lateral flip.", "Hips follow the arm motion \u2014 staying on the waterline throughout.", "Body stays A to B \u2014 no vertical movement, no sinking.", "Establish the hand signal with the swimmer before the session \u2014 make sure they know what it means.", "During independent swimming, cue \"Roll\" verbally AND show the hand signal simultaneously.", "Wait \u2014 give the swimmer time to self-initiate before adding any contact.", "If they do not respond, delay further, then cue again. Only use hands if safety requires it.", "Swimmer is on their back floating \u2014 calm breathing, 8\u201312 seconds.", "Cue \"Back Down\" verbally when swimmer is ready.", "Swimmer tucks chin slightly and rolls back to belly \u2014 same lateral motion as the roll up, reversed.", "Hips stay on waterline throughout \u2014 no sinking during the return.", "Step to instructor \u2014 short reps: Swimmer does SRS from the step to you. You are Point B and you are close. Focus entirely on clean mechanics \u2014 roll ti", "Short width \u2014 wall to wall: Step back. Swimmer goes from wall to wall using SRS. Start with you positioned in front of them in the water, then gradual", "Long width \u2014 full pool: Same approach \u2014 instructor in front for the whole length first, then step aside as confidence builds. Multiple SRS cycles need", "Throughout: Instructor tracks roll timing, float quality, and Back Down mechanics \u2014 but does not touch unless safety requires it."]}, "l3": {"h": {"ey": "Coach Training \u2014 Complete Before Pool \u00b7 Prerequisite: Level 2", "ti": "Level 3Breathing Up& Stamina", "su": "Level 3 introduces a completely new skill \u2014 Breathing Up. The swimmer learns to breathe while moving forward without going vertical. Float is not replaced. Both skills coexist. Position always comes before distance.", "tg": ["\ud83d\udca8 Breathing Up", "\ud83d\udcd0 Horizontal Position", "\ud83d\udcaa Stamina", "\ud83c\udf0a Float as Recovery", "\ud83c\udfaf Toy Retrieval"], "bn": ""}, "q": "https://docs.google.com/forms/d/e/1FAIpQLSeDkhpu4DOkSCNjJb3TADs7w5egRXj2fTWY-kUdAaYCM0SR5w/viewform?usp=header", "s": [{"h": "Purpose of Level 3", "p": "What Breathing Up is and why it requires careful teaching"}, {"h": "Breathing Up Progression \u2014 5 Stages", "p": "Every swimmer starts at Stage 1. Earn each stage before moving forward."}, {"h": "Breathing Up Techniques \u2014 Watch Video First", "p": "These are taught in-person. The module gives you context and when-to-use for each one."}, {"h": "Stamina Building \u2014 Second Half of Level 3", "p": "Only begins once breathing mechanics are clean and consistent"}, {"h": "Toy Retrieval \u2014 Mastery", "p": "Introduced at Level 2 (step depth) \u00b7 Mastered at Level 3 \u00b7 Shallow end to deep end"}, {"h": "Critical Safety \u2014 Watch Points", "p": "Know these responses before you get in the water"}], "w": [{"l": "What It Does", "t": "Both hands on the swimmer's hips hold them horizontal throughout the entire breath cycle. The instructor leads the motion \u2014 the swimmer's body learns what correct horizontal breathing feels like befor"}, {"l": "What It Does", "t": "Both hands on hips apply rhythmic upward pulses timed with the swimmer's breath cycle. This teaches the swimmer to feel when to breathe and how to maintain position through motion \u2014 not just through h"}, {"l": "What It Does", "t": "Gentle downward guidance at the base of the skull corrects a head that is lifting too high during breathing. Chin should only break the surface \u2014 any more and the hips will drop. Quick application, re"}, {"l": "What It Does", "t": "Forearms wrap lightly around the swimmer's upper torso and shoulders, stabilizing the upper body during the breath. Prevents the shoulder roll, twisting, or head overshoot that can throw off horizonta"}, {"l": "What It Does", "t": "Instructor holds the swimmer's head above water with both hands supporting the face and jaw. Face stays clear of water throughout. The swimmer works to bring their legs and hips UP to the surface thro"}, {"l": "What It Does", "t": "One finger (or two) curved under the swimmer's chin or jaw in a fish hook shape. Gently lifts and supports the head as the swimmer breathes up. Keeps chin at surface level without the instructor fully"}], "b": ["Full grip \u2014 both hands hold hips firmly throughout breath.", "Hip grab \u2192 release \u2014 hold during breath, release during swim phase.", "One hand \u2014 single hand provides light pressure only.", "Fingertip \u2014 minimal contact, swimmer mostly independent.", "Both hands on hips \u2014 feel the swimmer's kick rhythm first.", "Apply gentle upward pulse timed with the moment of breath \u2014 not before, not after.", "Pulse keeps hips up during the brief moment head lifts.", "Release between breaths \u2014 swimmer maintains position on their own between pulses.", "Thumb at base of skull \u2014 occipital bone.", "Fingers across collarbone or upper shoulder.", "Gentle downward guidance only \u2014 never force.", "Pair with verbal cue \"Chin only\" every time.", "Forearms wrap lightly around upper torso and shoulders \u2014 not a grip, a stabilizer.", "Hold torso square during breath \u2014 no twisting allowed.", "Release immediately after breath is taken.", "Use alongside hip grab early on, or independently as swimmer improves.", "Both hands gently support the swimmer's face and jaw \u2014 keep head above water throughout.", "Swimmer's face is clear of water \u2014 no dunking during this drill.", "Encourage hard kicking: \"Kicks! Kick those legs up!\"", "Do NOT hold the legs \u2014 let the kick effort bring them up.", "Curve one or two fingers under swimmer's chin or jaw \u2014 fish hook shape.", "Gently lift and support chin at surface level \u2014 do not pull up.", "Remove contact immediately as soon as breath is taken.", "Transition: full fish hook \u2192 fingertip graze \u2192 no contact.", "To the step \u2014 first reps: Swimmer uses breathing up to reach the step. Full instructor support first \u2014 hip grab, guiding the breath. Then instructor i", "Short width \u2014 wall to wall: Swimmer uses breathing up to cross the short width. Full support first, then instructor in front providing guidance, then ", "Long width \u2014 step to wall: Full pool length using breathing up. Same three steps \u2014 support, instructor in front, then independent. Multiple breaths an", "Swimmer crosses long end of pool using breathing up \u2014 mechanics confirmed clean.", "Instructor introduces gentle surface resistance or water movement during the swim.", "Swimmer maintains horizontal position and breathing up despite added challenge.", "Resistance is always applied intentionally and cautiously \u2014 too much causes regression."]}};
+<div id="root">
+  <div class="loading-screen">
+    <div class="loading-inner">
+      <div class="spin-lg"></div>
+      <div style="font-size:18px;font-weight:700;margin-bottom:6px">AquaCats Swim School</div>
+      <div style="font-size:13px;opacity:.7">Loading your data...</div>
+    </div>
+  </div>
+</div>
+<div class="saving-toast" id="saving-toast"><span class="spin"></span> Saving...</div>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+import { getFirestore, collection, doc, getDocs, addDoc, setDoc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
 
-// ── Supabase API helpers ──────────────────────────────────────────────────────
-const hdrs = {"Content-Type":"application/json","apikey":SUPA_KEY,"Authorization":"Bearer "+SUPA_KEY};
+const firebaseConfig = {
+  apiKey: "AIzaSyBC2Gfi_L2snXvLw0H6-umw-NVnQPNWcmA",
+  authDomain: "aquacats.firebaseapp.com",
+  projectId: "aquacats",
+  storageBucket: "aquacats.firebasestorage.app",
+  messagingSenderId: "1074694624746",
+  appId: "1:1074694624746:web:d9cddbf04c6e297f64ce93"
+};
 
-async function dbGet(table, filters="") {
-  const r = await fetch(`${SUPA_URL}/rest/v1/${table}?${filters}&order=created_at.asc`, {headers:{...hdrs,"Prefer":"return=representation"}});
-  if (!r.ok) throw new Error(await r.text());
-  return r.json();
-}
-async function dbInsert(table, data) {
-  const r = await fetch(`${SUPA_URL}/rest/v1/${table}`, {method:"POST",headers:{...hdrs,"Prefer":"return=representation"},body:JSON.stringify(data)});
-  if (!r.ok) throw new Error(await r.text());
-  return r.json();
-}
-async function dbUpdate(table, id, data) {
-  const r = await fetch(`${SUPA_URL}/rest/v1/${table}?id=eq.${id}`, {method:"PATCH",headers:{...hdrs,"Prefer":"return=representation"},body:JSON.stringify(data)});
-  if (!r.ok) throw new Error(await r.text());
-  return r.json();
-}
-async function dbDelete(table, id) {
-  const r = await fetch(`${SUPA_URL}/rest/v1/${table}?id=eq.${id}`, {method:"DELETE",headers:hdrs});
-  if (!r.ok) throw new Error(await r.text());
-}
-async function dbUpsertSetting(key, value) {
-  const r = await fetch(`${SUPA_URL}/rest/v1/settings?key=eq.${key}`, {method:"PATCH",headers:{...hdrs,"Prefer":"return=representation"},body:JSON.stringify({value})});
-  const d = await r.json();
-  if (!d.length) await dbInsert("settings", {key, value});
-}
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-// ── Constants ─────────────────────────────────────────────────────────────────
-const ADMIN_PIN="0000";
-const LT=[{id:"private",name:"Private",isGroup:false},{id:"semi",name:"Semi-Private",isGroup:true},{id:"group",name:"Group (3+)",isGroup:true}];
-const LVS=["Level 0","Level 1","Level 2","Level 3","Level 4","Level 5","Level 6","Level 7","Level 8"];
-const ACL=[{id:"contract",label:"Signed Contract"},{id:"backgroundCheck",label:"Background Check"},{id:"cpr",label:"CPR Certified"},{id:"equipment",label:"Equipment Issued"},{id:"handbook",label:"Handbook Reviewed"},{id:"orientation",label:"Orientation Complete"}];
-const CLS=["Level 0","Level 1","Level 2","Level 3"];
-const TCH={"Level 0":["Breath Control","Submersion","Front Float","Back Float","Front Glide","Back Glide","Kick on Front","Kick on Back","Roll Over","Wall Grab","Jump In","Assisted Swim"],"Level 1":["Freestyle Arms","Freestyle Breathing","Freestyle Kick","Backstroke Arms","Backstroke Kick","Side Breathing","Treading Water","Deep Water Entry","Surface Dive"],"Level 2":["Freestyle Full Stroke","Backstroke Full Stroke","Breaststroke Kick","Breaststroke Arms","Breaststroke Timing","Elementary Backstroke","Diving","Flip Turn Intro"],"Level 3":["Butterfly Kick","Butterfly Arms","Butterfly Timing","Breaststroke Full","Flip Turns","Open Turns","Racing Starts","IM Order","Endurance Sets"],"General":["Class Management","Parent Communication","Safety Awareness","Lesson Planning","Adapting to Swimmers","Positive Reinforcement","Correcting Form","Time Management","Equipment Use"]};
-const TM=[{id:"mod1",label:"Module 1",title:"The Basics of Swimming",icon:"🌊",col:"#0e1f3d",ac:"#00b4d8"},{id:"mod2",label:"Module 2",title:"Classroom & Handling",icon:"📋",col:"#5a3e00",ac:"#c9a227"},{id:"safety",label:"Safety",title:"Safety Module",icon:"🚨",col:"#7a0000",ac:"#e74c3c"},{id:"l0",label:"Level 0",title:"Infant & Toddler Foundations",icon:"🌊",col:"#0a4a3a",ac:"#0a7a6e"},{id:"l1",label:"Level 1",title:"Survival Mastery & SRS",icon:"🌊",col:"#0a2a5a",ac:"#1a6fc4"},{id:"l2",label:"Level 2",title:"SRS Independence & Endurance",icon:"🌊",col:"#3a1a6a",ac:"#5a2d8c"},{id:"l3",label:"Level 3",title:"Breathing Up & Stamina",icon:"🌊",col:"#5a3000",ac:"#e07b00"}];
+const ADMIN_PIN = "0000";
+const LT = [{id:"private",name:"Private",isGroup:false},{id:"semi",name:"Semi-Private",isGroup:true},{id:"group",name:"Group (3+)",isGroup:true}];
+const LVS = ["Level 0","Level 1","Level 2","Level 3","Level 4","Level 5","Level 6","Level 7","Level 8"];
+const ACL = [{id:"contract",label:"Signed Contract"},{id:"backgroundCheck",label:"Background Check"},{id:"cpr",label:"CPR Certified"},{id:"equipment",label:"Equipment Issued"},{id:"handbook",label:"Handbook Reviewed"},{id:"orientation",label:"Orientation Complete"}];
+const CLS = ["Level 0","Level 1","Level 2","Level 3"];
+const TCH = {"Level 0":["Breath Control","Submersion","Front Float","Back Float","Front Glide","Back Glide","Kick on Front","Kick on Back","Roll Over","Wall Grab","Jump In","Assisted Swim"],"Level 1":["Freestyle Arms","Freestyle Breathing","Freestyle Kick","Backstroke Arms","Backstroke Kick","Side Breathing","Treading Water","Deep Water Entry","Surface Dive"],"Level 2":["Freestyle Full Stroke","Backstroke Full Stroke","Breaststroke Kick","Breaststroke Arms","Breaststroke Timing","Elementary Backstroke","Diving","Flip Turn Intro"],"Level 3":["Butterfly Kick","Butterfly Arms","Butterfly Timing","Breaststroke Full","Flip Turns","Open Turns","Racing Starts","IM Order","Endurance Sets"],"General":["Class Management","Parent Communication","Safety Awareness","Lesson Planning","Adapting to Swimmers","Positive Reinforcement","Correcting Form","Time Management","Equipment Use"]};
+const TM = [{id:"mod1",label:"Module 1",title:"The Basics of Swimming",icon:"🌊",col:"#0e1f3d",ac:"#00b4d8"},{id:"mod2",label:"Module 2",title:"Classroom & Handling",icon:"📋",col:"#5a3e00",ac:"#c9a227"},{id:"safety",label:"Safety",title:"Safety Module",icon:"🚨",col:"#7a0000",ac:"#e74c3c"},{id:"l0",label:"Level 0",title:"Infant & Toddler Foundations",icon:"🌊",col:"#0a4a3a",ac:"#0a7a6e"},{id:"l1",label:"Level 1",title:"Survival Mastery & SRS",icon:"🌊",col:"#0a2a5a",ac:"#1a6fc4"},{id:"l2",label:"Level 2",title:"SRS Independence & Endurance",icon:"🌊",col:"#3a1a6a",ac:"#5a2d8c"},{id:"l3",label:"Level 3",title:"Breathing Up & Stamina",icon:"🌊",col:"#5a3000",ac:"#e07b00"}];
 
-// ── App State ─────────────────────────────────────────────────────────────────
 let staff=[], students=[], sessions=[], trainees=[], settings={};
 let cu=null, tab="eod", preview=null;
-let loaded=false;
 
-const uid=()=>Math.random().toString(36).slice(2,10);
-const gSP=ex=>{const u=new Set(ex);let p;do{p=String(Math.floor(1000+Math.random()*3999))}while(u.has(p)||p==="0000");return p};
-const gCP=ex=>{const u=new Set(ex);let p;do{p=String(Math.floor(5000+Math.random()*4999))}while(u.has(p));return p};
-const esc=s=>String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+const uid = () => Math.random().toString(36).slice(2,10);
+const gSP = ex => { const u=new Set(ex); let p; do{p=String(Math.floor(1000+Math.random()*3999))}while(u.has(p)||p==="0000"); return p };
+const gCP = ex => { const u=new Set(ex); let p; do{p=String(Math.floor(5000+Math.random()*4999))}while(u.has(p)); return p };
+const esc = s => String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 
-// ── Load all data from Supabase ───────────────────────────────────────────────
+const showSaving = () => { const t=document.getElementById("saving-toast"); if(t){t.classList.add("show"); setTimeout(()=>t.classList.remove("show"),2000);} };
+
+async function fbGet(col_name) {
+  const snap = await getDocs(collection(db, col_name));
+  return snap.docs.map(d => ({id: d.id, ...d.data()}));
+}
+async function fbAdd(col_name, data) {
+  const ref = await addDoc(collection(db, col_name), {...data, created_at: new Date().toISOString()});
+  return {id: ref.id, ...data};
+}
+async function fbUpdate(col_name, id, data) {
+  await updateDoc(doc(db, col_name, id), data);
+  showSaving();
+}
+async function fbDelete(col_name, id) {
+  await deleteDoc(doc(db, col_name, id));
+}
+async function fbSetSetting(key, value) {
+  await setDoc(doc(db, "settings", key), {value}, {merge: true});
+  settings[key] = value;
+}
+async function fbGetSettings() {
+  const snap = await getDocs(collection(db, "settings"));
+  const s = {};
+  snap.docs.forEach(d => s[d.id] = d.data().value);
+  return s;
+}
+
 async function loadAll() {
   try {
-    [staff, students, sessions, trainees] = await Promise.all([
-      dbGet("staff"),
-      dbGet("students"),
-      dbGet("sessions","order=created_at.asc"),
-      dbGet("trainees")
+    [staff, students, sessions, trainees, settings] = await Promise.all([
+      fbGet("staff"), fbGet("students"), fbGet("sessions"), fbGet("trainees"), fbGetSettings()
     ]);
-    const settingsArr = await dbGet("settings");
-    settings = {};
-    settingsArr.forEach(s => settings[s.key] = s.value);
-    loaded = true;
+    sessions.sort((a,b) => (a.date||"").localeCompare(b.date||""));
   } catch(e) {
-    console.error("Load error:", e);
-    showError("Could not connect to database. Check your internet connection and try refreshing.");
+    document.getElementById("root").innerHTML = `<div class="loading-screen"><div class="loading-inner"><div style="font-size:32px;margin-bottom:12px">⚠️</div><div style="max-width:300px;font-size:15px">Could not connect to database.<br><br>${e.message}</div><button onclick="location.reload()" style="margin-top:16px;padding:10px 20px;background:#0ea5e9;color:#fff;border:none;border-radius:8px;cursor:pointer">Retry</button></div></div>`;
+    throw e;
   }
 }
 
-function showError(msg) {
-  document.getElementById("root").innerHTML = `<div class="loading"><div class="loading-inner"><div style="font-size:32px;margin-bottom:12px">⚠️</div><div style="font-size:15px;max-width:300px">${esc(msg)}</div><button onclick="location.reload()" class="btn bp" style="margin-top:16px">Retry</button></div></div>`;
-}
+await loadAll();
+render();
 
-// ── Init ──────────────────────────────────────────────────────────────────────
-async function init() {
-  await loadAll();
-  if (loaded) render();
-}
-
-// ── Render ────────────────────────────────────────────────────────────────────
 function render() {
   const root = document.getElementById("root");
-  if (!cu) { root.innerHTML = loginHTML(); bindLogin(); return; }
-  if (cu.type==="trainee") { root.innerHTML = traineeApp(); bindTrainee(); return; }
-  if (cu.type==="parent") { root.innerHTML = parentApp(); bindParent(); return; }
-  if (cu.type==="coach") { root.innerHTML = coachApp(); bindCoach(); return; }
-  if (preview) { root.innerHTML = previewApp(); bindTrainee(); return; }
-  root.innerHTML = adminApp();
-  bindAdmin();
+  if(!cu) { root.innerHTML = loginHTML(); bindLogin(); return; }
+  if(cu.type==="trainee") { root.innerHTML = traineeApp(); bindTrainee(); return; }
+  if(cu.type==="parent") { root.innerHTML = parentApp(); bindParent(); return; }
+  if(cu.type==="coach") { root.innerHTML = coachApp(); bindCoach(); return; }
+  if(preview) { root.innerHTML = traineeApp(); bindTrainee(); return; }
+  root.innerHTML = adminApp(); bindAdmin();
 }
 
-// ── Login ─────────────────────────────────────────────────────────────────────
 function loginHTML() {
-  return `<div class="lwp"><div class="lwd">
-    <div style="font-size:52px;margin-bottom:12px">🏊</div>
-    <h1 style="font-size:22px;font-weight:700;margin-bottom:4px">AquaCats Swim School</h1>
-    <p style="font-size:13px;color:var(--t2);margin-bottom:24px">Enter your PIN to continue</p>
-    <div id="login-err" style="color:var(--er);font-size:13px;margin-bottom:8px;display:none"></div>
-    <input class="pin" id="pin-in" type="password" maxlength="6" placeholder="••••">
-    <button class="login-btn" id="login-btn">Login</button>
-    <div style="font-size:11px;color:var(--t3);margin-top:12px">Admin: 0000 · Coaches, trainees & parents use assigned PINs</div>
-  </div></div>`;
+  const logo = settings.logo_url;
+  const logoEl = logo ? `<img src="${esc(logo)}" style="width:72px;height:72px;border-radius:12px;object-fit:contain;margin-bottom:12px" onerror="this.style.display='none'">` : `<div style="font-size:52px;margin-bottom:12px">🏊</div>`;
+  return `<div class="lwp"><div class="lwd">${logoEl}<h1 style="font-size:22px;font-weight:700;margin-bottom:4px">AquaCats Swim School</h1><p style="font-size:13px;color:var(--t2);margin-bottom:24px">Enter your PIN to continue</p><div id="login-err" style="color:var(--er);font-size:13px;margin-bottom:8px;display:none"></div><input class="pin" id="pin-in" type="password" maxlength="6" placeholder="••••" autocomplete="off"><button class="login-btn" id="login-btn">Login</button><div style="font-size:11px;color:var(--t3);margin-top:12px">Admin: 0000 · Coaches, trainees & parents use assigned PINs</div></div></div>`;
 }
 
 function bindLogin() {
@@ -246,59 +236,43 @@ function bindLogin() {
     const pin = document.getElementById("pin-in").value.trim();
     const errEl = document.getElementById("login-err");
     errEl.style.display = "none";
-    if (pin === ADMIN_PIN) { cu={type:"admin"}; tab="eod"; render(); return; }
+    if(pin===ADMIN_PIN) { cu={type:"admin"}; tab="eod"; render(); return; }
     const s = staff.find(x=>x.pin===pin);
-    if (s) {
-      const type = (s.roles?.includes("trainee")&&!s.roles?.includes("coach")) ? "trainee" : "coach";
-      cu = {type, id:s.id, name:s.name, sd:s};
-      render(); return;
-    }
+    if(s) { cu={type:(s.roles?.includes("trainee")&&!s.roles?.includes("coach"))?"trainee":"coach",id:s.id,name:s.name,sd:s}; render(); return; }
     const st = students.find(x=>x.pin===pin);
-    if (st) { cu={type:"parent",id:st.id,name:st.parent_name||st.name,pd:st}; render(); return; }
-    errEl.textContent = "Invalid PIN. Try again.";
-    errEl.style.display = "block";
+    if(st) { cu={type:"parent",id:st.id,name:st.parent_name||st.name,pd:st}; render(); return; }
+    errEl.textContent="Invalid PIN. Try again."; errEl.style.display="block";
   };
   document.getElementById("login-btn").onclick = doLogin;
   document.getElementById("pin-in").onkeydown = e => { if(e.key==="Enter") doLogin(); };
 }
 
-// ── Header ────────────────────────────────────────────────────────────────────
 function hdrHTML(title, sub, extra="") {
-  const logoUrl = settings.logo_url || "";
-  const logo = logoUrl
-    ? `<img src="${esc(logoUrl)}" class="logo" onerror="this.style.display='none'">`
-    : `<div class="logo-ph">🏊</div>`;
-  return `<div class="hdr"><div class="hl">${logo}<div><div class="ht">${esc(title)}</div><div class="hs">${esc(sub)}</div></div></div><div class="row">${extra}<button class="btn bg-btn bi" id="logout-btn" style="color:#90e0ef" title="Logout">✕</button></div></div>`;
+  const logo = settings.logo_url;
+  const logoEl = logo ? `<img src="${esc(logo)}" class="logo-img" onerror="this.style.display='none'">` : `<div class="logo-ph">🏊</div>`;
+  return `<div class="hdr"><div class="hl">${logoEl}<div><div class="ht">${esc(title)}</div><div class="hs">${esc(sub)}</div></div></div><div class="row">${extra}<button class="btn bg-btn bi" id="logout-btn" style="color:#90e0ef;font-size:16px" title="Logout">✕</button></div></div>`;
 }
 function bindLogout(cb) {
-  const btn = document.getElementById("logout-btn");
-  if (btn) btn.onclick = cb || (()=>{cu=null;preview=null;render();});
+  const btn=document.getElementById("logout-btn");
+  if(btn) btn.onclick = cb||(()=>{cu=null;preview=null;render();});
 }
 
-// ── Tabs ──────────────────────────────────────────────────────────────────────
 function tabsHTML(tabs, cur) {
   const ic={eod:"📋",progress:"🏅",makeup:"📅",cert:"🏆",trainee:"🎓",payroll:"💵",renewal:"🔄",roster:"👥"};
   const lb={eod:"EOD",progress:"Progress",makeup:"Makeup",cert:"Certs",trainee:"Trainees",payroll:"Payroll",renewal:"25th",roster:"Roster"};
-  return `<div class="tbr">${tabs.map(t=>`<button class="tb${cur===t?" on":""}" data-tab="${t}">${ic[t]||""} <span style="display:none" class="tbl">${lb[t]||t}</span></button>`).join("")}</div>`;
+  return `<div class="tbr">${tabs.map(t=>`<button class="tb${cur===t?" on":""}" data-tab="${t}">${ic[t]||""} <span class="tbl">${lb[t]||t}</span></button>`).join("")}</div>`;
 }
 function bindTabs(cb) {
   document.querySelectorAll("[data-tab]").forEach(btn=>btn.onclick=()=>{tab=btn.dataset.tab;cb();});
-  // Show labels on wider screens
   if(window.innerWidth>=480) document.querySelectorAll(".tbl").forEach(el=>el.style.display="inline");
 }
 
-// ── Admin ─────────────────────────────────────────────────────────────────────
 function adminApp() {
   const tabs=["eod","progress","makeup","cert","trainee","payroll","renewal","roster"];
   return `<div class="app">${hdrHTML("AquaCats","Administrator")}<main class="main">${tabsHTML(tabs,tab)}${tabContent(tab)}</main></div>`;
 }
-function bindAdmin() {
-  bindLogout();
-  bindTabs(()=>render());
-  bindTabContent(tab);
-}
+function bindAdmin() { bindLogout(); bindTabs(()=>render()); bindTabContent(tab); }
 
-// ── Coach ─────────────────────────────────────────────────────────────────────
 function coachApp() {
   const ms=students.filter(s=>s.coach_ids?.includes(cu.id));
   const today=new Date().toISOString().split("T")[0];
@@ -306,40 +280,21 @@ function coachApp() {
   const mk=ms.reduce((sum,s)=>sum+(s.makeup_units||0),0);
   const isTr=cu.sd?.roles?.includes("trainer");
   const tabs=isTr?["eod","progress","makeup","cert","trainee"]:["eod","progress","makeup","cert"];
-  const hero=`<div class="rh" style="background:linear-gradient(135deg,#0e1f3d,#0a3060)">
-    <h2>Welcome, ${esc(cu.name)} 👋</h2><p>Your coaching dashboard</p>
-    <div class="rg">
-      <div class="rs"><div class="rv">${ms.length}</div><div class="rl">My Students</div></div>
-      <div class="rs"><div class="rv">${tc}</div><div class="rl">Today</div></div>
-      <div class="rs"><div class="rv">${mk}</div><div class="rl">Makeups</div></div>
-    </div></div>`;
+  const hero=`<div class="rh" style="background:linear-gradient(135deg,#0e1f3d,#0a3060)"><h2>Welcome, ${esc(cu.name)} 👋</h2><p>Your coaching dashboard</p><div class="rg"><div class="rs"><div class="rv">${ms.length}</div><div class="rl">My Students</div></div><div class="rs"><div class="rv">${tc}</div><div class="rl">Today</div></div><div class="rs"><div class="rv">${mk}</div><div class="rl">Makeups</div></div></div></div>`;
   return `<div class="app">${hdrHTML("AquaCats",cu.name+" · Coach")}<main class="main">${hero}${tabsHTML(tabs,tab)}${tabContent(tab)}</main></div>`;
 }
 function bindCoach() { bindLogout(); bindTabs(()=>render()); bindTabContent(tab); }
 
-// ── Parent ────────────────────────────────────────────────────────────────────
 function parentApp() {
   const st=students.find(s=>s.id===cu.id);
   const ss=st?sessions.filter(s=>s.student_id===st.id):[];
   const comp=ss.filter(s=>s.status==="completed").length;
-  const rows=ss.length===0?`<div class="emp"><div class="ei">🏊</div>No sessions yet</div>`:
-    ss.slice(-15).reverse().map(s=>{const c=staff.find(x=>x.id===s.coach_id);return`<div class="lr"><div class="lm"><div class="ln">${esc(s.date)}</div><div class="ls">${esc(c?.name||"—")} · ${esc(s.lesson_type_id)}</div></div><span class="bge ${s.status==="completed"?"bg2":"by"}">${esc(s.status)}</span></div>`;}).join("");
-  const mkCard=(st?.makeup_units||0)>0?`<div class="card"><div class="ch"><div class="ct">Makeup Credits</div></div><div class="cb" style="text-align:center"><div style="font-size:40px;font-weight:700;color:var(--wn);padding:12px 0">${st.makeup_units}</div><div style="color:var(--t2);font-size:13px">makeup lesson${st.makeup_units!==1?"s":""} — contact your coach to schedule</div></div></div>`:"";
-  return `<div class="app">${hdrHTML("AquaCats",cu.name+" · Parent")}<main class="main">
-    <div class="rh" style="background:linear-gradient(135deg,#0a4a3a,#0a7a6e)">
-      <h2>Hello, ${esc(cu.name)} 👋</h2><p>${esc(st?.name||"")}'s progress at AquaCats</p>
-      <div class="rg">
-        <div class="rs"><div class="rv">${esc(st?.level||"—")}</div><div class="rl">Level</div></div>
-        <div class="rs"><div class="rv">${st?.subscription_units||0}</div><div class="rl">Remaining</div></div>
-        <div class="rs"><div class="rv">${st?.makeup_units||0}</div><div class="rl">Makeups</div></div>
-        <div class="rs"><div class="rv">${comp}</div><div class="rl">Completed</div></div>
-      </div></div>
-    <div class="card"><div class="ch"><div class="ct">Recent Sessions</div></div><div class="cb sc">${rows}</div></div>
-    ${mkCard}</main></div>`;
+  const rows=ss.length===0?`<div class="emp"><div class="ei">🏊</div>No sessions yet</div>`:ss.slice(-15).reverse().map(s=>{const c=staff.find(x=>x.id===s.coach_id);return`<div class="lr"><div class="lm"><div class="ln">${esc(s.date)}</div><div class="ls">${esc(c?.name||"—")} · ${esc(s.lesson_type_id)}</div></div><span class="bge ${s.status==="completed"?"bg2":"by"}">${esc(s.status)}</span></div>`;}).join("");
+  const mkCard=(st?.makeup_units||0)>0?`<div class="card"><div class="ch"><div class="ct">Makeup Credits</div></div><div class="cb" style="text-align:center"><div style="font-size:40px;font-weight:700;color:var(--wn);padding:12px 0">${st.makeup_units}</div><div style="color:var(--t2);font-size:13px">makeup lesson${st.makeup_units!==1?"s":""} — contact your coach to schedule</div></div></div>` :"";
+  return `<div class="app">${hdrHTML("AquaCats",cu.name+" · Parent")}<main class="main"><div class="rh" style="background:linear-gradient(135deg,#0a4a3a,#0a7a6e)"><h2>Hello, ${esc(cu.name)} 👋</h2><p>${esc(st?.name||"")}'s progress at AquaCats</p><div class="rg"><div class="rs"><div class="rv">${esc(st?.level||"—")}</div><div class="rl">Level</div></div><div class="rs"><div class="rv">${st?.subscription_units||0}</div><div class="rl">Remaining</div></div><div class="rs"><div class="rv">${st?.makeup_units||0}</div><div class="rl">Makeups</div></div><div class="rs"><div class="rv">${comp}</div><div class="rl">Completed</div></div></div></div><div class="card"><div class="ch"><div class="ct">Recent Sessions</div></div><div class="cb sc">${rows}</div></div>${mkCard}</main></div>`;
 }
 function bindParent() { bindLogout(); }
 
-// ── Trainee ───────────────────────────────────────────────────────────────────
 function traineeApp() {
   const name=preview?preview.name:(cu?.name||"");
   const me=trainees.find(t=>t.name===name)||null;
@@ -347,546 +302,287 @@ function traineeApp() {
   const tot=TM.length,passed=TM.filter(m=>gp(m.id).quizPassed).length,read=TM.filter(m=>gp(m.id).read).length;
   const pct=Math.round(passed/tot*100);
   const portalUrl=settings.portal_url||"https://aquacatsswimschool.github.io/aquacats";
-  const modCards=TM.map(mod=>{
-    const p=gp(mod.id);
-    return `<div class="mc">
-      <div class="mct" style="background:linear-gradient(135deg,${mod.col},${mod.col}bb)">
-        <span style="font-size:20px">${mod.icon}</span>
-        <div style="flex:1"><div class="mcl">${mod.label}</div><div class="mctl">${mod.title}</div></div>
-        ${p.read?"<span>✅</span>":""}
-      </div>
-      <div class="mcb">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-          <span style="font-size:11px;color:var(--t2)">${p.read?"✓ Read":"Not yet read"}</span>
-          <button class="qc${p.quizPassed?" qp":""}" data-quiz-mod="${mod.id}">${p.quizPassed?"✅ Passed":"📝 Pending"}</button>
-        </div>
-        <a href="${esc(portalUrl)}#${mod.id}" target="_blank" class="ob" data-open-mod="${mod.id}">🔗 Open in Training Portal →</a>
-      </div>
-    </div>`;
-  }).join("");
-  const checklist=me?`<div class="card"><div class="ch"><div class="ct">Onboarding Checklist</div></div><div class="cb">
-    ${ACL.map(item=>{const ck=me.progress_data?.adminChecklist?.[item.id]||false;return`<div class="cr${ck?" ck":""}"><div class="cbx${ck?" on":""}"></div><span class="cr-lbl">${item.label}</span><span style="margin-left:auto;font-size:11px;color:${ck?"var(--ok)":"var(--t3)"}">${ck?"✓ Done":"Pending admin"}</span></div>`;}).join("")}
-  </div></div>`:`<div class="alw">⚠️ Your training record hasn't been set up yet. Ask your admin to add you in the Trainees tab.</div>`;
+  const modCards=TM.map(mod=>{const p=gp(mod.id);return`<div class="mc"><div class="mct" style="background:linear-gradient(135deg,${mod.col},${mod.col}bb)"><span style="font-size:20px">${mod.icon}</span><div style="flex:1"><div class="mcl">${mod.label}</div><div class="mctl">${mod.title}</div></div>${p.read?"<span>✅</span>":""}</div><div class="mcb"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px"><span style="font-size:11px;color:var(--t2)">${p.read?"✓ Read":"Not yet read"}</span><button class="qc${p.quizPassed?" qp":""}" data-quiz-mod="${mod.id}">${p.quizPassed?"✅ Passed":"📝 Pending"}</button></div><a href="${esc(portalUrl)}#${mod.id}" target="_blank" class="ob" data-open-mod="${mod.id}">🔗 Open in Training Portal →</a></div></div>`;}).join("");
+  const checklist=me?`<div class="card"><div class="ch"><div class="ct">Onboarding Checklist</div></div><div class="cb">${ACL.map(item=>{const ck=me.progress_data?.adminChecklist?.[item.id]||false;return`<div class="cr${ck?" ck":""}"><div class="cbx${ck?" on":""}"></div><span class="cr-lbl">${item.label}</span><span style="margin-left:auto;font-size:11px;color:${ck?"var(--ok)":"var(--t3)"}">${ck?"✓ Done":"Pending admin"}</span></div>`;}).join("")}</div></div>`:`<div class="alw">⚠️ Your training record hasn't been set up yet. Ask your admin to add you in the Trainees tab.</div>`;
   const backBtn=preview?`<button class="btn bs" id="back-prev" style="background:#fcd34d;color:#1a1a2e;font-weight:700">← Back to Admin</button>`:"";
-  return `<div class="app">${hdrHTML(preview?"Admin Preview":"AquaCats Training",preview?"👁 Previewing: "+esc(name):cu.name,backBtn)}<main class="main">
-    <div class="ovb">
-      <div style="font-size:11px;color:#90e0ef;font-weight:700;text-transform:uppercase;letter-spacing:1px">My Training Progress</div>
-      <div class="ovs"><div><div class="osv">${read}/${tot}</div><div class="osl">Read</div></div><div><div class="osv">${passed}/${tot}</div><div class="osl">Quizzes</div></div><div><div class="osv">${pct}%</div><div class="osl">Complete</div></div></div>
-      <div style="margin-top:10px"><div class="pbw" style="background:rgba(255,255,255,.15)"><div class="pb" style="width:${pct}%;background:#00b4d8"></div></div></div>
-    </div>
-    <div class="modgrid">${modCards}</div>
-    ${checklist}
-  </main></div>`;
-}
-function previewApp(){return traineeApp();}
-
-async function markReadDB(modId, traineeName) {
-  const t=trainees.find(x=>x.name===traineeName);
-  if(!t)return;
-  const mp={...t.module_progress,[modId]:{...t.module_progress?.[modId],read:true}};
-  t.module_progress=mp;
-  await dbUpdate("trainees",t.id,{module_progress:mp});
-}
-async function toggleQuizDB(modId, traineeName) {
-  const t=trainees.find(x=>x.name===traineeName);
-  if(!t)return;
-  const cur=t.module_progress?.[modId]?.quizPassed||false;
-  const mp={...t.module_progress,[modId]:{...t.module_progress?.[modId],quizPassed:!cur}};
-  t.module_progress=mp;
-  await dbUpdate("trainees",t.id,{module_progress:mp});
-  render();
+  return `<div class="app">${hdrHTML(preview?"Admin Preview":"AquaCats Training",preview?"👁 Previewing: "+esc(name):cu.name,backBtn)}<main class="main"><div class="ovb"><div style="font-size:11px;color:#90e0ef;font-weight:700;text-transform:uppercase;letter-spacing:1px">My Training Progress</div><div class="ovs"><div><div class="osv">${read}/${tot}</div><div class="osl">Read</div></div><div><div class="osv">${passed}/${tot}</div><div class="osl">Quizzes</div></div><div><div class="osv">${pct}%</div><div class="osl">Complete</div></div></div><div style="margin-top:10px"><div class="pbw" style="background:rgba(255,255,255,.15)"><div class="pb" style="width:${pct}%;background:#00b4d8"></div></div></div></div><div class="modgrid">${modCards}</div>${checklist}</main></div>`;
 }
 
 function bindTrainee() {
   const name=preview?preview.name:(cu?.name||"");
-  if(document.getElementById("back-prev"))document.getElementById("back-prev").onclick=()=>{preview=null;render();};
+  if(document.getElementById("back-prev")) document.getElementById("back-prev").onclick=()=>{preview=null;render();};
   bindLogout(()=>{if(preview){preview=null;render();}else{cu=null;render();}});
-  document.querySelectorAll("[data-open-mod]").forEach(a=>{
-    a.onclick=()=>markReadDB(a.dataset.openMod,name);
-  });
-  document.querySelectorAll("[data-quiz-mod]").forEach(btn=>{
-    btn.onclick=e=>{e.stopPropagation();toggleQuizDB(btn.dataset.quizMod,name);};
-  });
+  document.querySelectorAll("[data-open-mod]").forEach(a=>a.onclick=async()=>{const me=trainees.find(t=>t.name===name);if(!me)return;const mp={...me.module_progress,[a.dataset.openMod]:{...me.module_progress?.[a.dataset.openMod],read:true}};me.module_progress=mp;await fbUpdate("trainees",me.id,{module_progress:mp});render();});
+  document.querySelectorAll("[data-quiz-mod]").forEach(btn=>btn.onclick=async e=>{e.stopPropagation();const me=trainees.find(t=>t.name===name);if(!me)return;const id=btn.dataset.quizMod;const cur=me.module_progress?.[id]?.quizPassed||false;const mp={...me.module_progress,[id]:{...me.module_progress?.[id],quizPassed:!cur}};me.module_progress=mp;await fbUpdate("trainees",me.id,{module_progress:mp});render();});
 }
 
-// ── Tab content dispatcher ────────────────────────────────────────────────────
 function tabContent(t) {
-  if(t==="eod")return eodHTML();
-  if(t==="progress")return progHTML();
-  if(t==="makeup")return mkupHTML();
-  if(t==="cert")return certHTML();
-  if(t==="trainee")return traineeTabHTML();
-  if(t==="payroll")return payHTML();
-  if(t==="renewal")return renewHTML();
-  if(t==="roster")return rosterHTML();
+  if(t==="eod") return eodHTML();
+  if(t==="progress") return progHTML();
+  if(t==="makeup") return mkupHTML();
+  if(t==="cert") return certHTML();
+  if(t==="trainee") return traineeTabHTML();
+  if(t==="payroll") return payHTML();
+  if(t==="renewal") return renewHTML();
+  if(t==="roster") return rosterHTML();
   return "";
 }
 function bindTabContent(t) {
-  if(t==="eod")bindEOD();
-  else if(t==="progress")bindProg();
-  else if(t==="makeup")bindMkup();
-  else if(t==="cert")bindCert();
-  else if(t==="trainee")bindTraineeTab();
-  else if(t==="payroll")bindPay();
-  else if(t==="renewal")bindRenew();
-  else if(t==="roster")bindRoster();
+  if(t==="eod") bindEOD();
+  else if(t==="progress") bindProg();
+  else if(t==="makeup") bindMkup();
+  else if(t==="cert") bindCert();
+  else if(t==="trainee") bindTraineeTab();
+  else if(t==="payroll") bindPay();
+  else if(t==="renewal") bindRenew();
+  else if(t==="roster") bindRoster();
 }
 
-// ── EOD ───────────────────────────────────────────────────────────────────────
-let eodDate=new Date().toISOString().split("T")[0], eodCoach="", eodEntries=[];
+---
+
+Paste that after Part 1, then tell me when ready for Part 3!let eodDate=new Date().toISOString().split("T")[0], eodCoach="", eodEntries=[];
 function eodHTML() {
-  if(cu.type==="coach")eodCoach=cu.id;
+  if(cu.type==="coach") eodCoach=cu.id;
   const todaySess=sessions.filter(s=>s.date===eodDate&&(cu.type==="admin"||s.coach_id===cu.id));
   const avail=cu.type==="coach"?students.filter(s=>s.coach_ids?.includes(cu.id)):students;
-  const coachSel=cu.type==="admin"?`<div class="fld"><label>Coach</label><select class="sel" id="eod-coach"><option value="">— Select Coach —</option>${staff.filter(s=>s.roles?.includes("coach")).map(s=>`<option value="${s.id}" ${eodCoach===s.id?"selected":""}>${esc(s.name)}</option>`).join("")}</select></div>`:"";
-  const logged=todaySess.length===0?"":`<div class="card"><div class="ch"><div class="ct">Logged Today (${todaySess.length})</div></div><div class="cb sc">
-    ${todaySess.map(s=>{const st=students.find(x=>x.id===s.student_id);const c=staff.find(x=>x.id===s.coach_id);return`<div class="lr"><div class="lm"><div class="ln">${esc(st?.name||"?")}</div><div class="ls">${esc(c?.name||"")} · ${esc(s.status)} · $${(s.pay||0).toFixed(2)}</div></div><span class="bge ${s.status==="completed"?"bg2":"by"}">${esc(s.status)}</span></div>`;}).join("")}
-  </div></div>`;
-  const entries=eodEntries.map(e=>`<div class="ef" style="margin-bottom:10px">
-    <div class="rbt" style="margin-bottom:8px"><strong style="font-size:13px">Entry</strong><button class="btn bg-btn bi bs" data-del-entry="${e.id}">✕</button></div>
-    <div class="g2">
-      <div class="fld c2"><label>Student</label><select class="sel" data-entry="${e.id}" data-field="student_id"><option value="">— Select —</option>${avail.map(s=>`<option value="${s.id}" ${e.student_id===s.id?"selected":""}>${esc(s.name)}</option>`).join("")}</select></div>
-      <div class="fld"><label>Status</label><select class="sel" data-entry="${e.id}" data-field="status">${["completed","no-show","late-cancel","coach-cancel","weather","makeup-used"].map(v=>`<option value="${v}" ${e.status===v?"selected":""}>${v}</option>`).join("")}</select></div>
-      <div class="fld"><label>Type</label><select class="sel" data-entry="${e.id}" data-field="lesson_type_id">${LT.map(lt=>`<option value="${lt.id}" ${e.lesson_type_id===lt.id?"selected":""}>${lt.name}</option>`).join("")}</select></div>
-      <div class="fld"><label>Minutes</label><input class="inp" type="number" value="${e.minutes}" data-entry="${e.id}" data-field="minutes"></div>
-      <div class="fld"><label>Units</label><input class="inp" type="number" step="0.5" value="${e.units}" data-entry="${e.id}" data-field="units"></div>
-      <div class="fld c2"><label>Notes</label><textarea class="txa" rows="2" data-entry="${e.id}" data-field="notes" placeholder="Optional...">${esc(e.notes||"")}</textarea></div>
-    </div>
-    <div style="display:flex;align-items:center;gap:8px">
-      <div class="cbx${e.is_sub?" on":""}" data-toggle-sub="${e.id}"></div>
-      <span style="font-size:13px">Sub Coach</span>
-      <span style="margin-left:auto;font-weight:700">Pay: $${(e.pay||0).toFixed(2)}</span>
-    </div>
-  </div>`).join("");
-  return `<div class="card"><div class="cb">
-    <div class="g2">
-      <div class="fld"><label>Date</label><div class="dn"><button class="btn bo bs bi" id="eod-prev">‹</button><input class="inp" type="date" id="eod-date" value="${eodDate}"><button class="btn bo bs bi" id="eod-next">›</button></div></div>
-      ${coachSel}
-    </div>
-  </div></div>
-  ${logged}
-  <div class="card"><div class="ch"><div class="ct">New Entries</div><button class="btn bp bs" id="add-entry">+ Add</button></div>
-  <div class="cb">
-    ${eodEntries.length===0?`<div class="emp"><div class="ei">📋</div>Click Add to log a session</div>`:""}
-    ${entries}
-    ${eodEntries.length>0?`<button class="btn bp" style="width:100%;margin-top:8px" id="eod-save">💾 Save All Entries</button>`:""}
-  </div></div>`;
+  const csEl=cu.type==="admin"?`<div class="fld"><label>Coach</label><select class="sel" id="eod-coach"><option value="">— Select Coach —</option>{staff.filter(s=>s.roles?.includes("coach")).map(s=>`<option value="
+{s.id}" eodCoach===s.id?"selected":"">{eodCoach===s.id?"selected":""}>
+eodCoach===s.id?"selected":"">{esc(s.name)}</option>`).join("")}</select></div>`:"";
+  const logged=todaySess.length===0?"":` <div class="card"><div class="ch"><div class="ct">Logged Today (todaySess.length)</div></div><divclass="cbsc">{todaySess.length})</div></div><div class="cb sc">
+todaySess.length)</div></div><divclass="cbsc">{todaySess.map(s=>{const st=students.find(x=>x.id===s.student_id);const c=staff.find(x=>x.id===s.coach_id);return`<div class="lr"><div class="lm"><div class="ln">esc(st?.name∣∣"?")</div><divclass="ls">{esc(st?.name||"?")}</div><div class="ls">
+esc(st?.name∣∣"?")</div><divclass="ls">{esc(c?.name||"")} · {esc(s.status)} · $
+{(s.pay||0).toFixed(2)}</div></div><span class="bge s.status==="completed"?"bg2":"by"">{s.status==="completed"?"bg2":"by"}">
+s.status==="completed"?"bg2":"by"">{esc(s.status)}</span></div>`;}).join("")}</div></div>`;
+  const entries=eodEntries.map(e=>`<div class="ef" style="margin-bottom:10px"><div class="rbt" style="margin-bottom:8px"><strong style="font-size:13px">Entry</strong><button class="btn bg-btn bi bs" data-del="e.id">✕</button></div><divclass="g2"><divclass="fldc2"><label>Student</label><selectclass="sel"data−entry="{e.id}">✕</button></div><div class="g2"><div class="fld c2"><label>Student</label><select class="sel" data-entry="
+e.id">✕</button></div><divclass="g2"><divclass="fldc2"><label>Student</label><selectclass="sel"data−entry="{e.id}" data-field="student_id"><option value="">— Select —</option>{avail.map(s=>`<option value="
+{s.id}" e.studentid===s.id?"selected":"">{e.student_id===s.id?"selected":""}>
+e.studenti​d===s.id?"selected":"">{esc(s.name)}</option>`).join("")}</select></div><div class="fld"><label>Status</label><select class="sel" data-entry="e.id"data−field="status">{e.id}" data-field="status">
+e.id"data−field="status">{["completed","no-show","late-cancel","coach-cancel","weather","makeup-used"].map(v=>`<option value="{v}" ${e.status===v?"selected":""}>
+{v}</option>`).join("")}</select></div><div class="fld"><label>Type</label><select class="sel" data-entry="e.id"data−field="lessontypeid">{e.id}" data-field="lesson_type_id">
+e.id"data−field="lessont​ypei​d">{LT.map(lt=>`<option value="{lt.id}" ${e.lesson_type_id===lt.id?"selected":""}>
+{lt.name}</option>`).join("")}</select></div><div class="fld"><label>Minutes</label><input class="inp" type="number" value="e.minutes"data−entry="{e.minutes}" data-entry="
+e.minutes"data−entry="{e.id}" data-field="minutes"></div><div class="fld"><label>Units</label><input class="inp" type="number" step="0.5" value="e.units"data−entry="{e.units}" data-entry="
+e.units"data−entry="{e.id}" data-field="units"></div><div class="fld c2"><label>Notes</label><textarea class="txa" rows="2" data-entry="e.id"data−field="notes">{e.id}" data-field="notes">
+e.id"data−field="notes">{esc(e.notes||"")}</textarea></div></div><div style="display:flex;align-items:center;gap:8px"><div class="cbxe.issub?"on":"""data−sub="{e.is_sub?" on":""}" data-sub="
+e.iss​ub?"on":"""data−sub="{e.id}"></div><span style="font-size:13px">Sub Coach</span><span style="margin-left:auto;font-weight:700">Pay: $${(e.pay||0).toFixed(2)}</span></div></div>`).join("");
+  return `<div class="card"><div class="cb"><div class="g2"><div class="fld"><label>Date</label><div class="dn"><button class="btn bo bs bi" id="eprev">‹</button><input class="inp" type="date" id="eod-date" value="eodDate"><buttonclass="btnbobsbi"id="enext">›</button></div></div>{eodDate}"><button class="btn bo bs bi" id="enext">›</button></div></div>
+eodDate"><buttonclass="btnbobsbi"id="enext">›</button></div></div>{csEl}</div></div></div>logged<divclass="card"><divclass="ch"><divclass="ct">NewEntries</div><buttonclass="btnbpbs"id="add−entry">+Add</button></div><divclass="cb">{logged}<div class="card"><div class="ch"><div class="ct">New Entries</div><button class="btn bp bs" id="add-entry">+ Add</button></div><div class="cb">
+logged<divclass="card"><divclass="ch"><divclass="ct">NewEntries</div><buttonclass="btnbpbs"id="add−entry">+Add</button></div><divclass="cb">{eodEntries.length===0?`<div class="emp"><div class="ei">📋</div>Click Add to log a session</div>`:""}entries{entries}
+entries{eodEntries.length>0?`<button class="btn bp" style="width:100%;margin-top:8px" id="eod-save">💾 Save All Entries</button>`:""}</div></div>`;
 }
 function recalcPay(e) {
   const cid=cu.type==="coach"?cu.id:eodCoach;
-  const c=staff.find(s=>s.id===cid);
-  if(!c)return;
+  const c=staff.find(s=>s.id===cid);if(!c)return;
   const lt=LT.find(l=>l.id===e.lesson_type_id);
   e.pay=(e.is_sub?c.sub_rate:(lt?.isGroup?c.group_rate:c.private_rate)||0)*(e.units||1);
 }
 function bindEOD() {
   document.getElementById("eod-date").onchange=e=>{eodDate=e.target.value;render();};
-  document.getElementById("eod-prev").onclick=()=>{const d=new Date(eodDate);d.setDate(d.getDate()-1);eodDate=d.toISOString().split("T")[0];render();};
-  document.getElementById("eod-next").onclick=()=>{const d=new Date(eodDate);d.setDate(d.getDate()+1);eodDate=d.toISOString().split("T")[0];render();};
-  if(document.getElementById("eod-coach"))document.getElementById("eod-coach").onchange=e=>{eodCoach=e.target.value;};
+  document.getElementById("eprev").onclick=()=>{const d=new Date(eodDate);d.setDate(d.getDate()-1);eodDate=d.toISOString().split("T")[0];render();};
+  document.getElementById("enext").onclick=()=>{const d=new Date(eodDate);d.setDate(d.getDate()+1);eodDate=d.toISOString().split("T")[0];render();};
+  if(document.getElementById("eod-coach")) document.getElementById("eod-coach").onchange=e=>{eodCoach=e.target.value;};
   document.getElementById("add-entry").onclick=()=>{eodEntries.push({id:uid(),student_id:"",status:"completed",lesson_type_id:"private",minutes:30,units:1,is_sub:false,notes:"",pay:0});render();};
-  document.querySelectorAll("[data-del-entry]").forEach(btn=>btn.onclick=()=>{eodEntries=eodEntries.filter(e=>e.id!==btn.dataset.delEntry);render();});
-  document.querySelectorAll("[data-entry][data-field]").forEach(el=>{
-    const onChange=()=>{
-      const e=eodEntries.find(x=>x.id===el.dataset.entry);if(!e)return;
-      const v=el.type==="number"?parseFloat(el.value)||0:el.value;
-      e[el.dataset.field]=v;recalcPay(e);
-      const payEl=el.closest(".ef")?.querySelector("[style*='Pay:']");
-      if(payEl)payEl.textContent="Pay: $"+(e.pay||0).toFixed(2);
-    };
-    el.onchange=onChange;el.oninput=onChange;
-  });
-  document.querySelectorAll("[data-toggle-sub]").forEach(cbx=>{
-    cbx.onclick=()=>{
-      const e=eodEntries.find(x=>x.id===cbx.dataset.toggleSub);if(!e)return;
-      e.is_sub=!e.is_sub;cbx.className="cbx"+(e.is_sub?" on":"");
-      recalcPay(e);
-      const payEl=cbx.closest(".ef")?.querySelector("[style*='Pay:']");
-      if(payEl)payEl.textContent="Pay: $"+(e.pay||0).toFixed(2);
-    };
-  });
-  if(document.getElementById("eod-save"))document.getElementById("eod-save").onclick=async()=>{
-    const btn=document.getElementById("eod-save");
-    btn.disabled=true;btn.innerHTML=`<span class="spin"></span> Saving...`;
+  document.querySelectorAll("[data-del]").forEach(btn=>btn.onclick=()=>{eodEntries=eodEntries.filter(e=>e.id!==btn.dataset.del);render();});
+  document.querySelectorAll("[data-entry][data-field]").forEach(el=>{const fn=()=>{const e=eodEntries.find(x=>x.id===el.dataset.entry);if(!e)return;e[el.dataset.field]=el.type==="number"?parseFloat(el.value)||0:el.value;recalcPay(e);const pe=el.closest(".ef")?.querySelector("[style*='Pay:']");if(pe)pe.textContent="Pay: $"+(e.pay||0).toFixed(2);};el.onchange=fn;el.oninput=fn;});
+  document.querySelectorAll("[data-sub]").forEach(cbx=>cbx.onclick=()=>{const e=eodEntries.find(x=>x.id===cbx.dataset.sub);if(!e)return;e.is_sub=!e.is_sub;cbx.className="cbx"+(e.is_sub?" on":"");recalcPay(e);const pe=cbx.closest(".ef")?.querySelector("[style*='Pay:']");if(pe)pe.textContent="Pay: $"+(e.pay||0).toFixed(2);});
+  if(document.getElementById("eod-save")) document.getElementById("eod-save").onclick=async()=>{
+    const btn=document.getElementById("eod-save");btn.disabled=true;btn.innerHTML=`<span class="spin"></span> Saving...`;
     const cid=cu.type==="coach"?cu.id:eodCoach;
     for(const e of eodEntries.filter(x=>x.student_id)){
-      const ns={...e,date:eodDate,coach_id:cid||null};
-      delete ns.id;
-      const saved=await dbInsert("sessions",[ns]);
-      sessions.push(...saved);
+      const {id:_,...data}=e;
+      const ns=await fbAdd("sessions",{...data,date:eodDate,coach_id:cid||null});
+      sessions.push(ns);
       const st=students.find(x=>x.id===e.student_id);
       if(st){
-        if(["completed","no-show","late-cancel"].includes(e.status))st.subscription_units=Math.max(0,st.subscription_units-e.units);
-        else if(e.status==="makeup-used")st.makeup_units=Math.max(0,st.makeup_units-1);
-        else if(["coach-cancel","weather"].includes(e.status))st.makeup_units=st.makeup_units+1;
-        await dbUpdate("students",st.id,{subscription_units:st.subscription_units,makeup_units:st.makeup_units});
+        if(["completed","no-show","late-cancel"].includes(e.status)) st.subscription_units=Math.max(0,st.subscription_units-e.units);
+        else if(e.status==="makeup-used") st.makeup_units=Math.max(0,st.makeup_units-1);
+        else if(["coach-cancel","weather"].includes(e.status)) st.makeup_units=st.makeup_units+1;
+        await fbUpdate("students",st.id,{subscription_units:st.subscription_units,makeup_units:st.makeup_units});
       }
     }
     eodEntries=[];render();
   };
 }
-
-// ── Progress ───────────────────────────────────────────────────────────────────
 let progSel="",progEdit=false,progFm={};
 function progHTML(){
-  const av=cu.type==="coach"?students.filter(s=>s.coach_ids?.includes(cu.id)):students;
-  const sel=av.find(s=>s.id===progSel)||null;
-  const ss=sel?sessions.filter(s=>s.student_id===sel.id):[];
-  const comp=ss.filter(s=>s.status==="completed").length;
-  let detail="";
-  if(sel&&!progEdit){
-    const cn=staff.filter(c=>sel.coach_ids?.includes(c.id));
-    detail=`<div class="sg">
-      <div class="sb"><div class="sv">${esc(sel.level)}</div><div class="sl2">Level</div></div>
-      <div class="sb"><div class="sv">${sel.subscription_units}</div><div class="sl2">Sub Units</div></div>
-      <div class="sb"><div class="sv">${sel.makeup_units}</div><div class="sl2">Makeups</div></div>
-      <div class="sb"><div class="sv">${comp}</div><div class="sl2">Completed</div></div>
-    </div>
-    <div class="fld"><label>Coaches</label><div class="row">${cn.length?cn.map(c=>`<span class="bge bb">${esc(c.name)}</span>`).join(""):`<span style="color:var(--t2);font-size:13px">No coach assigned</span>`}</div></div>
-    ${cu.type==="admin"?`<button class="btn bo bs" id="prog-edit" style="margin-bottom:12px">✏️ Edit</button>`:""}
-    <div class="dvd"></div>
-    <div style="font-weight:600;margin-bottom:8px">Recent Sessions</div>
-    <div class="sc">${ss.length===0?`<div class="emp">No sessions yet</div>`:ss.slice(-20).reverse().map(s=>{const c=staff.find(x=>x.id===s.coach_id);return`<div class="lr"><div class="lm"><div class="ln">${esc(s.date)}</div><div class="ls">${esc(c?.name||"—")} · ${esc(s.lesson_type_id)}</div></div><span class="bge ${s.status==="completed"?"bg2":"by"}">${esc(s.status)}</span></div>`;}).join("")}</div>`;
-  }else if(sel&&progEdit){
-    const coaches=staff.filter(s=>s.roles?.includes("coach"));
-    detail=`<div class="ef"><div class="g2">
-      <div class="fld"><label>Level</label><select class="sel" id="pe-level">${LVS.map(l=>`<option value="${l}" ${progFm.level===l?"selected":""}>${l}</option>`).join("")}</select></div>
-      <div class="fld"><label>Sub Units</label><input class="inp" type="number" id="pe-units" value="${progFm.subscription_units||0}"></div>
-      <div class="fld"><label>Makeup Units</label><input class="inp" type="number" id="pe-makeups" value="${progFm.makeup_units||0}"></div>
-      <div class="fld c2"><label>Coaches</label><div style="display:flex;flex-wrap:wrap;gap:4px">${coaches.map(c=>{const on=(progFm.coach_ids||[]).includes(c.id);return`<button class="cp ${on?"on":"off"}" data-coach-toggle="${c.id}">${esc(c.name)}</button>`;}).join("")}</div></div>
-    </div><div class="ea"><button class="btn bp bs" id="pe-save">💾 Save</button><button class="btn bo bs" id="pe-cancel">✕ Cancel</button></div></div>`;
-  }
-  return `<div class="card"><div class="ch"><div class="ct">Student Progress</div></div><div class="cb">
-    <div class="fld"><label>Select Student</label><select class="sel" id="prog-sel"><option value="">— Choose —</option>${av.map(s=>`<option value="${s.id}" ${progSel===s.id?"selected":""}>${esc(s.name)}</option>`).join("")}</select></div>
-    ${detail}
-  </div></div>`;
+const av=cu.type==="coach"?students.filter(s=>s.coach_ids?.includes(cu.id)):students;
+const sel=av.find(s=>s.id===progSel)||null;
+const ss=sel?sessions.filter(s=>s.student_id===sel.id):[];
+const comp=ss.filter(s=>s.status==="completed").length;
+let detail="";
+if(sel&&!progEdit){const cn=staff.filter(c=>sel.coach_ids?.includes(c.id));detail=<div class="sg"><div class="sb"><div class="sv">${esc(sel.level)}</div><div class="sl2">Level</div></div><div class="sb"><div class="sv">${sel.subscription_units}</div><div class="sl2">Sub Units</div></div><div class="sb"><div class="sv">${sel.makeup_units}</div><div class="sl2">Makeups</div></div><div class="sb"><div class="sv">${comp}</div><div class="sl2">Completed</div></div></div><div class="fld"><label>Coaches</label><div class="row">${cn.length?cn.map(c=><span class="bge bb">${esc(c.name)}</span>).join(""):<span style="color:var(--t2);font-size:13px">No coach assigned</span>}</div></div>${cu.type==="admin"?<button class="btn bo bs" id="prog-edit" style="margin-bottom:12px">✏️ Edit</button>:""}<div class="dvd"></div><div style="font-weight:600;margin-bottom:8px">Recent Sessions</div><div class="sc">${ss.length===0?<div class="emp">No sessions yet</div>:ss.slice(-20).reverse().map(s=>{const c=staff.find(x=>x.id===s.coach_id);return<div class="lr"><div class="lm"><div class="ln">${esc(s.date)}</div><div class="ls">${esc(c?.name||"—")} · ${esc(s.lesson_type_id)}</div></div><span class="bge s.status==="completed"?"bg2":"by"">{s.status==="completed"?"bg2":"by"}">
+s.status==="completed"?"bg2":"by"">{esc(s.status)}</span></div>;}).join("")}</div>;}
+else if(sel&&progEdit){const coaches=staff.filter(s=>s.roles?.includes("coach"));detail=<div class="ef"><div class="g2"><div class="fld"><label>Level</label><select class="sel" id="pe-lv">${LVS.map(l=><option value="{l}" ${progFm.level===l?"selected":""}>
+{l}</option>).join("")}</select></div><div class="fld"><label>Sub Units</label><input class="inp" type="number" id="pe-su" value="${progFm.subscription_units||0}"></div><div class="fld"><label>Makeup Units</label><input class="inp" type="number" id="pe-mu" value="${progFm.makeup_units||0}"></div><div class="fld c2"><label>Coaches</label><div style="display:flex;flex-wrap:wrap;gap:4px">${coaches.map(c=>{const on=(progFm.coach_ids||[]).includes(c.id);return<button class="cp on?"on":"off""data−ct="{on?"on":"off"}" data-ct="
+on?"on":"off""data−ct="{c.id}">${esc(c.name)}</button>;}).join("")}</div></div></div><div class="ea"><button class="btn bp bs" id="pe-save">💾 Save</button><button class="btn bo bs" id="pe-cancel">✕ Cancel</button></div></div>;}
+return <div class="card"><div class="ch"><div class="ct">Student Progress</div></div><div class="cb"><div class="fld"><label>Select Student</label><select class="sel" id="prog-sel"><option value="">— Choose —</option>${av.map(s=><option value="{s.id}" ${progSel===s.id?"selected":""}>
+{esc(s.name)}</option>).join("")}</select></div>${detail}</div></div>;
 }
 function bindProg(){
-  document.getElementById("prog-sel").onchange=e=>{progSel=e.target.value;progEdit=false;render();};
-  if(document.getElementById("prog-edit"))document.getElementById("prog-edit").onclick=()=>{const sel=students.find(s=>s.id===progSel);if(sel){progFm={level:sel.level,subscription_units:sel.subscription_units,makeup_units:sel.makeup_units,coach_ids:[...(sel.coach_ids||[])]};progEdit=true;render();}};
-  document.querySelectorAll("[data-coach-toggle]").forEach(btn=>btn.onclick=()=>{const id=btn.dataset.coachToggle;const on=(progFm.coach_ids||[]).includes(id);progFm.coach_ids=on?progFm.coach_ids.filter(i=>i!==id):[...(progFm.coach_ids||[]),id];btn.className="cp "+(on?"off":"on");});
-  if(document.getElementById("pe-save"))document.getElementById("pe-save").onclick=async()=>{
-    progFm.level=document.getElementById("pe-level").value;
-    progFm.subscription_units=+document.getElementById("pe-units").value;
-    progFm.makeup_units=+document.getElementById("pe-makeups").value;
-    const sel=students.find(s=>s.id===progSel);
-    if(sel){Object.assign(sel,progFm);await dbUpdate("students",sel.id,progFm);}
-    progEdit=false;render();
-  };
-  if(document.getElementById("pe-cancel"))document.getElementById("pe-cancel").onclick=()=>{progEdit=false;render();};
+document.getElementById("prog-sel").onchange=e=>{progSel=e.target.value;progEdit=false;render();};
+if(document.getElementById("prog-edit")) document.getElementById("prog-edit").onclick=()=>{const sel=students.find(s=>s.id===progSel);if(sel){progFm={level:sel.level,subscription_units:sel.subscription_units,makeup_units:sel.makeup_units,coach_ids:[...(sel.coach_ids||[])]};progEdit=true;render();}};
+document.querySelectorAll("[data-ct]").forEach(btn=>btn.onclick=()=>{const id=btn.dataset.ct;const on=(progFm.coach_ids||[]).includes(id);progFm.coach_ids=on?progFm.coach_ids.filter(i=>i!==id):[...(progFm.coach_ids||[]),id];btn.className="cp "+(on?"off":"on");});
+if(document.getElementById("pe-save")) document.getElementById("pe-save").onclick=async()=>{progFm.level=document.getElementById("pe-lv").value;progFm.subscription_units=+document.getElementById("pe-su").value;progFm.makeup_units=+document.getElementById("pe-mu").value;const sel=students.find(s=>s.id===progSel);if(sel){Object.assign(sel,progFm);await fbUpdate("students",sel.id,progFm);}progEdit=false;render();};
+if(document.getElementById("pe-cancel")) document.getElementById("pe-cancel").onclick=()=>{progEdit=false;render();};
 }
-
-// ── Makeup ────────────────────────────────────────────────────────────────────
 let mkFC=cu?.type==="coach"?cu?.id:"",mkFS="";
 function mkupHTML(){
-  let pool=students.filter(s=>s.makeup_units>0);
-  if(mkFC)pool=pool.filter(s=>s.coach_ids?.includes(mkFC));
-  if(mkFS)pool=pool.filter(s=>s.id===mkFS);
-  const hist=sessions.filter(s=>["makeup-used","coach-cancel","weather"].includes(s.status)&&(!mkFC||s.coach_id===mkFC)&&(!mkFS||s.student_id===mkFS)).slice(-20).reverse();
-  const cf=cu.type==="admin"?`<div class="fld"><label>By Coach</label><select class="sel" id="mk-coach"><option value="">All Coaches</option>${staff.filter(s=>s.roles?.includes("coach")).map(s=>`<option value="${s.id}" ${mkFC===s.id?"selected":""}>${esc(s.name)}</option>`).join("")}</select></div>`:"";
-  const hh=hist.length===0?"":`<div class="card"><div class="ch"><div class="ct">Makeup History</div></div><div class="cb sc">${hist.map(s=>{const st=students.find(x=>x.id===s.student_id);const c=staff.find(x=>x.id===s.coach_id);return`<div class="lr"><div class="lm"><div class="ln">${esc(st?.name||"?")} — ${esc(s.date)}</div><div class="ls">${esc(c?.name||"—")}</div></div><span class="bge ${s.status==="makeup-used"?"bg2":"bw"}">${esc(s.status)}</span></div>`;}).join("")}</div></div>`;
-  return `<div class="card"><div class="ch"><div class="ct">Filter</div></div><div class="cb"><div class="g2">${cf}<div class="fld"><label>By Student</label><select class="sel" id="mk-stu"><option value="">All Students</option>${students.map(s=>`<option value="${s.id}" ${mkFS===s.id?"selected":""}>${esc(s.name)}</option>`).join("")}</select></div></div></div></div>
-  <div class="card"><div class="ch"><div class="ct">Makeup Credits Available</div><span class="bge bw">${pool.length} students</span></div><div class="cb">
-    ${pool.length===0?`<div class="emp"><div class="ei">✅</div>No makeups match filter</div>`:""}
-    ${pool.map(s=>{const cn=staff.filter(c=>s.coach_ids?.includes(c.id)).map(c=>c.name).join(", ");return`<div class="lr"><div class="lm"><div class="ln">${esc(s.name)}</div><div class="ls">${esc(s.level)} · ${esc(cn||"No coach")}</div></div><span class="bge bw">${s.makeup_units} makeup${s.makeup_units!==1?"s":""}</span></div>`;}).join("")}
-  </div></div>${hh}`;
+let pool=students.filter(s=>s.makeup_units>0);
+if(mkFC) pool=pool.filter(s=>s.coach_ids?.includes(mkFC));
+if(mkFS) pool=pool.filter(s=>s.id===mkFS);
+const hist=sessions.filter(s=>["makeup-used","coach-cancel","weather"].includes(s.status)&&(!mkFC||s.coach_id===mkFC)&&(!mkFS||s.student_id===mkFS)).slice(-20).reverse();
+const cf=cu.type==="admin"?<div class="fld"><label>By Coach</label><select class="sel" id="mk-c"><option value="">All Coaches</option>${staff.filter(s=>s.roles?.includes("coach")).map(s=><option value="{s.id}" ${mkFC===s.id?"selected":""}>
+{esc(s.name)}</option>).join("")}</select></div>:"";
+const hh=hist.length===0?"": <div class="card"><div class="ch"><div class="ct">Makeup History</div></div><div class="cb sc">${hist.map(s=>{const st=students.find(x=>x.id===s.student_id);const c=staff.find(x=>x.id===s.coach_id);return<div class="lr"><div class="lm"><div class="ln">${esc(st?.name||"?")} — ${esc(s.date)}</div><div class="ls">${esc(c?.name||"—")}</div></div><span class="bge s.status==="makeup−used"?"bg2":"bw"">{s.status==="makeup-used"?"bg2":"bw"}">
+s.status==="makeup−used"?"bg2":"bw"">{esc(s.status)}</span></div>;}).join("")}</div></div>;
+return <div class="card"><div class="ch"><div class="ct">Filter</div></div><div class="cb"><div class="g2">${cf}<div class="fld"><label>By Student</label><select class="sel" id="mk-s"><option value="">All Students</option>${students.map(s=><option value="{s.id}" ${mkFS===s.id?"selected":""}>
+{esc(s.name)}</option>).join("")}</select></div></div></div></div><div class="card"><div class="ch"><div class="ct">Makeup Credits Available</div><span class="bge bw">${pool.length} students</span></div><div class="cb">${pool.length===0?<div class="emp"><div class="ei">✅</div>No makeups match filter</div>:""}${pool.map(s=>{const cn=staff.filter(c=>s.coach_ids?.includes(c.id)).map(c=>c.name).join(", ");return<div class="lr"><div class="lm"><div class="ln">${esc(s.name)}</div><div class="ls">${esc(s.level)} · ${esc(cn||"No coach")}</div></div><span class="bge bw">s.makeupunitsmakeup{s.makeup_units} makeup
+s.makeupu​nitsmakeup{s.makeup_units!==1?"s":""}</span></div>;}).join("")}</div></div>${hh};
 }
 function bindMkup(){
-  if(document.getElementById("mk-coach"))document.getElementById("mk-coach").onchange=e=>{mkFC=e.target.value;render();};
-  document.getElementById("mk-stu").onchange=e=>{mkFS=e.target.value;render();};
+if(document.getElementById("mk-c")) document.getElementById("mk-c").onchange=e=>{mkFC=e.target.value;render();};
+document.getElementById("mk-s").onchange=e=>{mkFS=e.target.value;render();};
 }
-
-// ── Cert ──────────────────────────────────────────────────────────────────────
 let certEdit=null,certFm={};
 function certHTML(){
-  const coaches=cu.type==="coach"?staff.filter(s=>s.id===cu.id):staff.filter(s=>s.roles?.includes("coach")||s.roles?.includes("trainee"));
-  const isExp=d=>d&&new Date(d)<new Date();
-  const isSoon=d=>{if(!d)return false;const diff=(new Date(d)-new Date())/86400000;return diff>=0&&diff<=30};
-  const cb=d=>{if(!d)return`<span class="bge by">Not set</span>`;if(isExp(d))return`<span class="bge br2">Expired ${esc(d)}</span>`;if(isSoon(d))return`<span class="bge bw">Expiring ${esc(d)}</span>`;return`<span class="bge bg2">${esc(d)}</span>`;};
-  return coaches.map(c=>`<div class="card"><div class="ch">
-    <div><div class="ct">${esc(c.name)}</div><div class="cd">${esc(c.roles?.join(", ")||"")}</div></div>
-    ${(cu.type==="admin"||cu.id===c.id)&&certEdit!==c.id?`<button class="btn bo bs cert-edit-btn" data-cid="${c.id}">✏️ Edit</button>`:""}
-    ${certEdit===c.id?`<div class="row"><button class="btn bp bs" id="cert-save">💾 Save</button><button class="btn bo bs" id="cert-cancel">✕</button></div>`:""}
-  </div><div class="cb">
-    ${certEdit===c.id?`<div class="g2">
-      <div class="fld"><label>CPR Expiry</label><input class="inp" type="date" id="cert-cpr" value="${esc(certFm.cprExpiry||"")}"></div>
-      <div class="fld"><label>Water Safety Expiry</label><input class="inp" type="date" id="cert-ws" value="${esc(certFm.wsExpiry||"")}"></div>
-      <div class="fld"><label>BG Check Expiry</label><input class="inp" type="date" id="cert-bg" value="${esc(certFm.bgCheckExpiry||"")}"></div>
-      <div class="fld"><label>Meetings Attended</label><input class="inp" type="number" id="cert-mt" value="${certFm.meetingsAttended||0}"></div>
-    </div>`:`<div class="g2">
-      <div><div style="font-size:11px;color:var(--t2);margin-bottom:4px">CPR</div>${cb(c.cert_data?.cprExpiry)}</div>
-      <div><div style="font-size:11px;color:var(--t2);margin-bottom:4px">Water Safety</div>${cb(c.cert_data?.wsExpiry)}</div>
-      <div><div style="font-size:11px;color:var(--t2);margin-bottom:4px">BG Check</div>${cb(c.cert_data?.bgCheckExpiry)}</div>
-      <div><div style="font-size:11px;color:var(--t2);margin-bottom:4px">Meetings</div><span class="bge bb">${c.cert_data?.meetingsAttended||0} attended</span></div>
-    </div>`}
-  </div></div>`).join("");
+const coaches=cu.type==="coach"?staff.filter(s=>s.id===cu.id):staff.filter(s=>s.roles?.includes("coach")||s.roles?.includes("trainee"));
+const isExp=d=>d&&new Date(d)<new Date();
+const isSoon=d=>{if(!d)return false;const diff=(new Date(d)-new Date())/86400000;return diff>=0&&diff<=30;};
+const cb=d=>{if(!d)return<span class="bge by">Not set</span>;if(isExp(d))return<span class="bge br2">Expired ${esc(d)}</span>;if(isSoon(d))return<span class="bge bw">Expiring ${esc(d)}</span>;return<span class="bge bg2">${esc(d)}</span>;};
+return coaches.map(c=><div class="card"><div class="ch"><div><div class="ct">${esc(c.name)}</div><div class="cd">${esc(c.roles?.join(", ")||"")}</div></div>${(cu.type==="admin"||cu.id===c.id)&&certEdit!==c.id?<button class="btn bo bs cert-edit" data-cid="${c.id}">✏️ Edit</button>:""}${certEdit===c.id?<div class="row"><button class="btn bp bs" id="cert-save">💾 Save</button><button class="btn bo bs" id="cert-cancel">✕</button></div>:""}</div><div class="cb">${certEdit===c.id?<div class="g2"><div class="fld"><label>CPR Expiry</label><input class="inp" type="date" id="c-cpr" value="${esc(certFm.cprExpiry||"")}"></div><div class="fld"><label>Water Safety Expiry</label><input class="inp" type="date" id="c-ws" value="${esc(certFm.wsExpiry||"")}"></div><div class="fld"><label>BG Check Expiry</label><input class="inp" type="date" id="c-bg" value="${esc(certFm.bgCheckExpiry||"")}"></div><div class="fld"><label>Meetings Attended</label><input class="inp" type="number" id="c-mt" value="${certFm.meetingsAttended||0}"></div></div>:<div class="g2"><div><div style="font-size:11px;color:var(--t2);margin-bottom:4px">CPR</div>${cb(c.cert_data?.cprExpiry)}</div><div><div style="font-size:11px;color:var(--t2);margin-bottom:4px">Water Safety</div>${cb(c.cert_data?.wsExpiry)}</div><div><div style="font-size:11px;color:var(--t2);margin-bottom:4px">BG Check</div>${cb(c.cert_data?.bgCheckExpiry)}</div><div><div style="font-size:11px;color:var(--t2);margin-bottom:4px">Meetings</div><span class="bge bb">${c.cert_data?.meetingsAttended||0} attended</span></div></div>}</div></div>).join("");
 }
 function bindCert(){
-  document.querySelectorAll(".cert-edit-btn").forEach(btn=>btn.onclick=()=>{const c=staff.find(s=>s.id===btn.dataset.cid);if(!c)return;certEdit=c.id;certFm={cprExpiry:c.cert_data?.cprExpiry||"",wsExpiry:c.cert_data?.wsExpiry||"",bgCheckExpiry:c.cert_data?.bgCheckExpiry||"",meetingsAttended:c.cert_data?.meetingsAttended||0};render();});
-  if(document.getElementById("cert-save"))document.getElementById("cert-save").onclick=async()=>{
-    const c=staff.find(s=>s.id===certEdit);
-    if(c){c.cert_data={...c.cert_data,cprExpiry:document.getElementById("cert-cpr").value,wsExpiry:document.getElementById("cert-ws").value,bgCheckExpiry:document.getElementById("cert-bg").value,meetingsAttended:+document.getElementById("cert-mt").value};
-    await dbUpdate("staff",c.id,{cert_data:c.cert_data});}
-    certEdit=null;render();
-  };
-  if(document.getElementById("cert-cancel"))document.getElementById("cert-cancel").onclick=()=>{certEdit=null;render();};
+document.querySelectorAll(".cert-edit").forEach(btn=>btn.onclick=()=>{const c=staff.find(s=>s.id===btn.dataset.cid);if(!c)return;certEdit=c.id;certFm={cprExpiry:c.cert_data?.cprExpiry||"",wsExpiry:c.cert_data?.wsExpiry||"",bgCheckExpiry:c.cert_data?.bgCheckExpiry||"",meetingsAttended:c.cert_data?.meetingsAttended||0};render();});
+if(document.getElementById("cert-save")) document.getElementById("cert-save").onclick=async()=>{const c=staff.find(s=>s.id===certEdit);if(c){c.cert_data={...c.cert_data,cprExpiry:document.getElementById("c-cpr").value,wsExpiry:document.getElementById("c-ws").value,bgCheckExpiry:document.getElementById("c-bg").value,meetingsAttended:+document.getElementById("c-mt").value};await fbUpdate("staff",c.id,{cert_data:c.cert_data});}certEdit=null;render();};
+if(document.getElementById("cert-cancel")) document.getElementById("cert-cancel").onclick=()=>{certEdit=null;render();};
 }
-
-// ── Payroll ───────────────────────────────────────────────────────────────────
 let payS=(()=>{const d=new Date();d.setDate(d.getDate()-14);return d.toISOString().split("T")[0]})();
 let payE=new Date().toISOString().split("T")[0];
 function payHTML(){
-  const f=sessions.filter(s=>s.date>=payS&&s.date<=payE);
-  const data=staff.filter(s=>s.roles?.includes("coach")).map(c=>{const cs=f.filter(s=>s.coach_id===c.id);return{c,cs,total:cs.reduce((sum,s)=>sum+(s.pay||0),0),done:cs.filter(s=>s.status==="completed").length};}).filter(x=>x.cs.length>0).sort((a,b)=>b.total-a.total);
-  const grand=data.reduce((sum,x)=>sum+x.total,0);
-  return `<div class="card"><div class="ch"><div class="ct">Payroll Calculator</div></div><div class="cb">
-    <div class="g2" style="margin-bottom:16px"><div class="fld"><label>Start</label><input class="inp" type="date" id="pay-s" value="${payS}"></div><div class="fld"><label>End</label><input class="inp" type="date" id="pay-e" value="${payE}"></div></div>
-    ${data.length===0?`<div class="emp">No sessions in range</div>`:""}
-    ${data.map(({c,total,done,cs})=>`<div class="lr"><div class="lm"><div class="ln">${esc(c.name)}</div><div class="ls">${done} completed · ${cs.length} total</div></div><span style="font-weight:700;font-size:18px">$${total.toFixed(2)}</span></div>`).join("")}
-    ${data.length>0?`<div style="display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--bd);margin-top:8px"><strong>Grand Total</strong><span style="font-weight:700;font-size:22px">$${grand.toFixed(2)}</span></div>`:""}
-  </div></div>`;
+const f=sessions.filter(s=>s.date>=payS&&s.date<=payE);
+const data=staff.filter(s=>s.roles?.includes("coach")).map(c=>{const cs=f.filter(s=>s.coach_id===c.id);return{c,cs,total:cs.reduce((sum,s)=>sum+(s.pay||0),0),done:cs.filter(s=>s.status==="completed").length};}).filter(x=>x.cs.length>0).sort((a,b)=>b.total-a.total);
+const grand=data.reduce((sum,x)=>sum+x.total,0);
+return <div class="card"><div class="ch"><div class="ct">Payroll Calculator</div></div><div class="cb"><div class="g2" style="margin-bottom:16px"><div class="fld"><label>Start</label><input class="inp" type="date" id="pay-s" value="${payS}"></div><div class="fld"><label>End</label><input class="inp" type="date" id="pay-e" value="${payE}"></div></div>${data.length===0?<div class="emp">No sessions in range</div>:""}${data.map(({c,total,done,cs})=><div class="lr"><div class="lm"><div class="ln">${esc(c.name)}</div><div class="ls">${done} completed · ${cs.length} total</div></div><span style="font-weight:700;font-size:18px">$${total.toFixed(2)}</span></div>).join("")}${data.length>0?<div style="display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--bd);margin-top:8px"><strong>Grand Total</strong><span style="font-weight:700;font-size:22px">$${grand.toFixed(2)}</span></div>:""}</div></div>;
 }
 function bindPay(){
-  document.getElementById("pay-s").onchange=e=>{payS=e.target.value;render();};
-  document.getElementById("pay-e").onchange=e=>{payE=e.target.value;render();};
+document.getElementById("pay-s").onchange=e=>{payS=e.target.value;render();};
+document.getElementById("pay-e").onchange=e=>{payE=e.target.value;render();};
 }
-
-// ── Renewal ───────────────────────────────────────────────────────────────────
 function renewHTML(){
-  const act=students.filter(s=>s.subscription_status==="Active");
-  return `<div class="card"><div class="ch"><div class="ct">25th Monthly Renewal</div></div><div class="cb">
-    <div id="renew-msg"></div>
-    ${act.length===0?`<div class="emp">No active students</div>`:""}
-    <div class="sc" style="margin-bottom:12px">${act.map(s=>{const u=(s.frequency||1)*4;return`<div class="lr"><div class="lm"><div class="ln">${esc(s.name)}</div><div class="ls">${s.frequency||1}x/week${s.pending_status?" · Pending: "+esc(s.pending_status):""}</div></div><div style="text-align:right"><div style="font-weight:600">+${u}</div><div style="font-size:11px;color:var(--t2)">${s.subscription_units} → ${s.subscription_units+u}</div></div></div>`;}).join("")}</div>
-    ${act.length>0?`<button class="btn bp" style="width:100%" id="renew-btn">🔄 Process Renewal (${act.length} students)</button>`:""}
-  </div></div>`;
+const act=students.filter(s=>s.subscription_status==="Active");
+return <div class="card"><div class="ch"><div class="ct">25th Monthly Renewal</div></div><div class="cb"><div id="renew-msg"></div>${act.length===0?<div class="emp">No active students</div>:""}<div class="sc" style="margin-bottom:12px">${act.map(s=>{const u=(s.frequency||1)*4;return<div class="lr"><div class="lm"><div class="ln">${esc(s.name)}</div><div class="ls">s.frequency∣∣1x/week{s.frequency||1}x/week
+s.frequency∣∣1x/week{s.pending_status?" · Pending: "+esc(s.pending_status):""}</div></div><div style="text-align:right"><div style="font-weight:600">+${u}</div><div style="font-size:11px;color:var(--t2)">${s.subscription_units} → ${s.subscription_units+u}</div></div></div>;}).join("")}</div>${act.length>0?<button class="btn bp" style="width:100%" id="renew-btn">🔄 Process Renewal (${act.length} students)</button>:""}</div></div>;
 }
 function bindRenew(){
-  if(document.getElementById("renew-btn"))document.getElementById("renew-btn").onclick=async()=>{
-    if(!confirm("Process renewal for all active students?"))return;
-    const btn=document.getElementById("renew-btn");
-    btn.disabled=true;btn.innerHTML=`<span class="spin"></span> Processing...`;
-    for(const s of students.filter(x=>x.subscription_status==="Active")){
-      const u=(s.frequency||1)*4;s.subscription_units+=u;
-      const upd={subscription_units:s.subscription_units};
-      if(s.pending_lesson_type_id){s.lesson_type_id=s.pending_lesson_type_id;upd.lesson_type_id=s.lesson_type_id;s.pending_lesson_type_id="";upd.pending_lesson_type_id="";}
-      if(s.pending_status){s.subscription_status=s.pending_status;upd.subscription_status=s.subscription_status;s.pending_status="";upd.pending_status="";}
-      await dbUpdate("students",s.id,upd);
-    }
-    render();
-    document.getElementById("renew-msg").innerHTML=`<div class="als">✅ Renewal processed!</div>`;
-    setTimeout(()=>{const m=document.getElementById("renew-msg");if(m)m.innerHTML="";},3000);
-  };
-}
-
-// ── Roster ────────────────────────────────────────────────────────────────────
-let rView="students",rSearch="",rEditId=null,rAdd=false,rFm={};
+if(document.getElementById("renew-btn")) document.getElementById("renew-btn").onclick=async()=>{
+if(!confirm("Process renewal for all active students?"))return;
+const btn=document.getElementById("renew-btn");btn.disabled=true;btn.innerHTML=<span class="spin"></span> Processing...;
+for(const s of students.filter(x=>x.subscription_status==="Active")){const u=(s.frequency||1)*4;s.subscription_units+=u;const upd={subscription_units:s.subscription_units};if(s.pending_lesson_type_id){s.lesson_type_id=s.pending_lesson_type_id;upd.lesson_type_id=s.lesson_type_id;s.pending_lesson_type_id="";upd.pending_lesson_type_id="";}if(s.pending_status){s.subscription_status=s.pending_status;upd.subscription_status=s.subscription_status;s.pending_status="";upd.pending_status="";}await fbUpdate("students",s.id,upd);}
+render();const m=document.getElementById("renew-msg");if(m)m.innerHTML=<div class="als">✅ Renewal processed!</div>;setTimeout(()=>{const m=document.getElementById("renew-msg");if(m)m.innerHTML="";},3000);
+};
+}let rView="students",rSearch="",rEditId=null,rAdd=false,rFm={};
 function rosterHTML(){
-  const su=settings.portal_url||"";
-  const urlCard=`<div class="card" style="border:2px solid var(--pr)"><div class="ch"><div><div class="ct">⚙️ Settings</div><div class="cd">Training portal URL & logo</div></div></div><div class="cb">
-    <div class="fld"><label>Training Portal URL</label><div style="display:flex;gap:8px"><input class="inp" id="set-url" value="${esc(su)}" placeholder="https://aquacatsswimschool.github.io/aquacats"><button class="btn bp bs" id="set-url-save">Save</button></div>${su?`<div style="font-size:12px;color:var(--ok);margin-top:4px">✅ ${esc(su)}</div>`:""}</div>
-    <div class="fld"><label>Logo URL (optional)</label><div style="display:flex;gap:8px"><input class="inp" id="set-logo" value="${esc(settings.logo_url||"")}" placeholder="https://your-site.com/logo.png"><button class="btn bp bs" id="set-logo-save">Save</button></div></div>
-  </div></div>`;
-  return urlCard+`<div class="stb"><button class="cp ${rView==="students"?"on":"off"}" id="rv-stu">👥 Students (${students.length})</button><button class="cp ${rView==="staff"?"on":"off"}" id="rv-sta">👤 Staff (${staff.length})</button></div>
-  ${rView==="students"?stuRosterHTML():staRosterHTML()}`;
+const su=settings.portal_url||"";const lo=settings.logo_url||"";
+const urlCard=<div class="card" style="border:2px solid var(--pr)"><div class="ch"><div><div class="ct">⚙️ Settings</div><div class="cd">Portal URL & Logo</div></div></div><div class="cb"><div class="fld"><label>Training Portal URL</label><div style="display:flex;gap:8px"><input class="inp" id="set-url" value="${esc(su)}" placeholder="https://aquacatsswimschool.github.io/aquacats"><button class="btn bp bs" id="set-url-save">Save</button></div></div><div class="fld"><label>Logo URL (optional)</label><div style="display:flex;gap:8px"><input class="inp" id="set-logo" value="${esc(lo)}" placeholder="https://your-site.com/logo.png"><button class="btn bp bs" id="set-logo-save">Save</button></div></div></div></div>;
+return urlCard+<div class="stb"><button class="cp ${rView==="students"?"on":"off"}" id="rv-s">👥 Students (${students.length})</button><button class="cp ${rView==="staff"?"on":"off"}" id="rv-st">👤 Staff (${staff.length})</button></div>${rView==="students"?stuRHTML():staRHTML()};
 }
-
-function stuRosterHTML(){
-  const coaches=staff.filter(s=>s.roles?.includes("coach"));
-  const filt=students.filter(s=>s.name.toLowerCase().includes(rSearch.toLowerCase())||(s.parent_name||"").toLowerCase().includes(rSearch.toLowerCase()));
-  const form=rAdd||rEditId?`<div class="ef">
-    <div class="g2">
-      <div class="fld c2"><label>Student Name *</label><input class="inp" id="rf-name" value="${esc(rFm.name||"")}"></div>
-      <div class="fld"><label>Parent Name</label><input class="inp" id="rf-parent" value="${esc(rFm.parent_name||"")}"></div>
-      <div class="fld"><label>PIN</label><input class="inp mn" id="rf-pin" maxlength="6" value="${esc(rFm.pin||"")}"></div>
-      <div class="fld"><label>Phone</label><input class="inp" id="rf-phone" value="${esc(rFm.phone||"")}"></div>
-      <div class="fld"><label>Email</label><input class="inp" id="rf-email" value="${esc(rFm.email||"")}"></div>
-      <div class="fld"><label>Level</label><select class="sel" id="rf-level">${LVS.map(l=>`<option value="${l}" ${rFm.level===l?"selected":""}>${l}</option>`).join("")}</select></div>
-      <div class="fld"><label>Lesson Type</label><select class="sel" id="rf-ltype">${LT.map(lt=>`<option value="${lt.id}" ${rFm.lesson_type_id===lt.id?"selected":""}>${lt.name}</option>`).join("")}</select></div>
-      <div class="fld"><label>Freq/week</label><input class="inp" type="number" id="rf-freq" min="1" max="7" value="${rFm.frequency||1}"></div>
-      <div class="fld"><label>Sub Units</label><input class="inp" type="number" id="rf-units" value="${rFm.subscription_units||4}"></div>
-      <div class="fld"><label>Makeup Units</label><input class="inp" type="number" id="rf-makeup" value="${rFm.makeup_units||0}"></div>
-      <div class="fld"><label>Status</label><select class="sel" id="rf-status"><option value="Active" ${rFm.subscription_status==="Active"?"selected":""}>Active</option><option value="Paused" ${rFm.subscription_status==="Paused"?"selected":""}>Paused</option><option value="Cancelled" ${rFm.subscription_status==="Cancelled"?"selected":""}>Cancelled</option></select></div>
-      <div class="fld"><label>Pending Status</label><select class="sel" id="rf-pstatus"><option value="">— None —</option><option value="Active" ${rFm.pending_status==="Active"?"selected":""}>Active</option><option value="Paused" ${rFm.pending_status==="Paused"?"selected":""}>Paused</option><option value="Cancelled" ${rFm.pending_status==="Cancelled"?"selected":""}>Cancelled</option></select></div>
-      <div class="fld c2"><label>Coaches</label><div style="display:flex;flex-wrap:wrap;gap:4px">${coaches.map(c=>{const on=(rFm.coach_ids||[]).includes(c.id);return`<button class="cp ${on?"on":"off"}" data-rc="${c.id}">${esc(c.name)}</button>`;}).join("")}</div></div>
-    </div>
-    <div class="ea"><button class="btn bp bs" id="rf-save">💾 Save</button><button class="btn bo bs" id="rf-cancel">✕ Cancel</button></div>
-  </div>`:"";
-  return `<div class="card"><div class="ch"><div class="ct">Students</div><button class="btn bp bs" id="add-stu">+ Add Student</button></div><div class="cb">
-    ${form}<div class="fld"><input class="inp" id="r-search" placeholder="Search…" value="${esc(rSearch)}"></div>
-    ${filt.length===0&&!rAdd?`<div class="emp"><div class="ei">🏊</div>No students yet.</div>`:""}
-    ${filt.filter(s=>rEditId!==s.id).map(s=>{const cn=staff.filter(c=>s.coach_ids?.includes(c.id)).map(c=>c.name).join(", ");return`<div class="lr"><div class="lm"><div class="ln">${esc(s.name)}</div><div class="ls">${esc(s.level)} · ${esc(s.subscription_status)} · ${s.subscription_units} units · ${esc(cn||"No coach")} · PIN: <span class="mn">${esc(s.pin)}</span></div></div><div class="la"><span class="bge ${s.subscription_status==="Active"?"bg2":"by"}">${esc(s.subscription_status)}</span><button class="btn bg-btn bi bs" data-edit-s="${s.id}">✏️</button><button class="btn bg-btn bi bs tdr" data-del-s="${s.id}">🗑</button></div></div>`;}).join("")}
-  </div></div>`;
+function stuRHTML(){
+const coaches=staff.filter(s=>s.roles?.includes("coach"));
+const filt=students.filter(s=>s.name.toLowerCase().includes(rSearch.toLowerCase())||(s.parent_name||"").toLowerCase().includes(rSearch.toLowerCase()));
+const form=rAdd||rEditId?<div class="ef"><div class="g2"><div class="fld c2"><label>Student Name *</label><input class="inp" id="rf-n" value="${esc(rFm.name||"")}"></div><div class="fld"><label>Parent Name</label><input class="inp" id="rf-pn" value="${esc(rFm.parent_name||"")}"></div><div class="fld"><label>PIN</label><input class="inp mn" id="rf-pin" maxlength="6" value="${esc(rFm.pin||"")}"></div><div class="fld"><label>Phone</label><input class="inp" id="rf-ph" value="${esc(rFm.phone||"")}"></div><div class="fld"><label>Email</label><input class="inp" id="rf-em" value="${esc(rFm.email||"")}"></div><div class="fld"><label>Level</label><select class="sel" id="rf-lv">${LVS.map(l=><option value="{l}" ${rFm.level===l?"selected":""}>
+{l}</option>).join("")}</select></div><div class="fld"><label>Lesson Type</label><select class="sel" id="rf-lt">${LT.map(lt=><option value="{lt.id}" ${rFm.lesson_type_id===lt.id?"selected":""}>
+{lt.name}</option>).join("")}</select></div><div class="fld"><label>Freq/week</label><input class="inp" type="number" id="rf-fr" min="1" max="7" value="${rFm.frequency||1}"></div><div class="fld"><label>Sub Units</label><input class="inp" type="number" id="rf-su" value="${rFm.subscription_units||4}"></div><div class="fld"><label>Makeup Units</label><input class="inp" type="number" id="rf-mu" value="${rFm.makeup_units||0}"></div><div class="fld"><label>Status</label><select class="sel" id="rf-st"><option value="Active" ${rFm.subscription_status==="Active"?"selected":""}>Active</option><option value="Paused" ${rFm.subscription_status==="Paused"?"selected":""}>Paused</option><option value="Cancelled" ${rFm.subscription_status==="Cancelled"?"selected":""}>Cancelled</option></select></div><div class="fld"><label>Pending Status</label><select class="sel" id="rf-ps"><option value="">— None —</option><option value="Active" ${rFm.pending_status==="Active"?"selected":""}>Active</option><option value="Paused" ${rFm.pending_status==="Paused"?"selected":""}>Paused</option><option value="Cancelled" ${rFm.pending_status==="Cancelled"?"selected":""}>Cancelled</option></select></div><div class="fld c2"><label>Coaches</label><div style="display:flex;flex-wrap:wrap;gap:4px">${coaches.map(c=>{const on=(rFm.coach_ids||[]).includes(c.id);return<button class="cp on?"on":"off""data−rc="{on?"on":"off"}" data-rc="
+on?"on":"off""data−rc="{c.id}">${esc(c.name)}</button>;}).join("")}</div></div></div><div class="ea"><button class="btn bp bs" id="rf-save">💾 Save</button><button class="btn bo bs" id="rf-cancel">✕ Cancel</button></div></div>:"";
+return <div class="card"><div class="ch"><div class="ct">Students</div><button class="btn bp bs" id="add-s">+ Add Student</button></div><div class="cb">${form}<div class="fld"><input class="inp" id="r-srch" placeholder="Search…" value="${esc(rSearch)}"></div>${filt.length===0&&!rAdd?<div class="emp"><div class="ei">🏊</div>No students yet.</div>:""}${filt.filter(s=>rEditId!==s.id).map(s=>{const cn=staff.filter(c=>s.coach_ids?.includes(c.id)).map(c=>c.name).join(", ");return<div class="lr"><div class="lm"><div class="ln">${esc(s.name)}</div><div class="ls">${esc(s.level)} · ${esc(s.subscription_status)} · ${s.subscription_units} units · ${esc(cn||"No coach")} · PIN: <span class="mn">${esc(s.pin)}</span></div></div><div class="la"><span class="bge s.subscriptionstatus==="Active"?"bg2":"by"">{s.subscription_status==="Active"?"bg2":"by"}">
+s.subscriptions​tatus==="Active"?"bg2":"by"">{esc(s.subscription_status)}</span><button class="btn bg-btn bi bs" data-es="${s.id}">✏️</button><button class="btn bg-btn bi bs tdr" data-ds="${s.id}">🗑</button></div></div>;}).join("")}</div></div>;
 }
-
-function getStuFm(){return{name:document.getElementById("rf-name")?.value||"",parent_name:document.getElementById("rf-parent")?.value||"",pin:document.getElementById("rf-pin")?.value||"",phone:document.getElementById("rf-phone")?.value||"",email:document.getElementById("rf-email")?.value||"",level:document.getElementById("rf-level")?.value||"Level 0",lesson_type_id:document.getElementById("rf-ltype")?.value||"private",frequency:+document.getElementById("rf-freq")?.value||1,subscription_units:+document.getElementById("rf-units")?.value||4,makeup_units:+document.getElementById("rf-makeup")?.value||0,subscription_status:document.getElementById("rf-status")?.value||"Active",pending_status:document.getElementById("rf-pstatus")?.value||"",pending_lesson_type_id:"",coach_ids:rFm.coach_ids||[],discount:0};}
-
-function staRosterHTML(){
-  const form=rAdd||rEditId?`<div class="ef">
-    <div class="g2">
-      <div class="fld c2"><label>Name *</label><input class="inp" id="sf-name" value="${esc(rFm.name||"")}"></div>
-      <div class="fld"><label>PIN</label><input class="inp mn" id="sf-pin" maxlength="6" value="${esc(rFm.pin||"")}"></div>
-      <div class="fld"><label>Private Rate</label><input class="inp" type="number" id="sf-pr" value="${rFm.private_rate||25}"></div>
-      <div class="fld"><label>Group Rate</label><input class="inp" type="number" id="sf-gr" value="${rFm.group_rate||20}"></div>
-      <div class="fld"><label>Sub Rate</label><input class="inp" type="number" id="sf-sr" value="${rFm.sub_rate||25}"></div>
-      <div class="fld c2"><label>Roles</label><div class="row">${["coach","trainee","trainer"].map(r=>`<button class="cp ${(rFm.roles||[]).includes(r)?"on":"off"}" data-role="${r}">${r}</button>`).join("")}</div></div>
-    </div>
-    <div class="ea"><button class="btn bp bs" id="sf-save">💾 Save</button><button class="btn bo bs" id="sf-cancel">✕ Cancel</button></div>
-  </div>`:"";
-  return `<div class="card"><div class="ch"><div class="ct">Staff</div><button class="btn bp bs" id="add-sta">+ Add Staff</button></div><div class="cb">
-    ${form}
-    ${staff.length===0&&!rAdd?`<div class="emp"><div class="ei">👤</div>No staff yet.</div>`:""}
-    ${staff.filter(s=>rEditId!==s.id).map(s=>`<div class="lr"><div class="lm"><div class="ln">${esc(s.name)}</div><div class="ls">PIN: <span class="mn">${esc(s.pin)}</span> · $${s.private_rate}/$${s.group_rate} · ${esc(s.roles?.join(", ")||"")}</div></div><div class="la"><span class="bge bn">${esc(s.roles?.[0]||"")}</span><button class="btn bg-btn bi bs" data-edit-sta="${s.id}">✏️</button><button class="btn bg-btn bi bs tdr" data-del-sta="${s.id}">🗑</button></div></div>`).join("")}
-  </div></div>`;
+function getSFm(){return{name:document.getElementById("rf-n")?.value||"",parent_name:document.getElementById("rf-pn")?.value||"",pin:document.getElementById("rf-pin")?.value||"",phone:document.getElementById("rf-ph")?.value||"",email:document.getElementById("rf-em")?.value||"",level:document.getElementById("rf-lv")?.value||"Level 0",lesson_type_id:document.getElementById("rf-lt")?.value||"private",frequency:+document.getElementById("rf-fr")?.value||1,subscription_units:+document.getElementById("rf-su")?.value||4,makeup_units:+document.getElementById("rf-mu")?.value||0,subscription_status:document.getElementById("rf-st")?.value||"Active",pending_status:document.getElementById("rf-ps")?.value||"",pending_lesson_type_id:"",coach_ids:rFm.coach_ids||[],discount:0};}
+function staRHTML(){
+const form=rAdd||rEditId?<div class="ef"><div class="g2"><div class="fld c2"><label>Name *</label><input class="inp" id="sf-n" value="${esc(rFm.name||"")}"></div><div class="fld"><label>PIN</label><input class="inp mn" id="sf-pin" maxlength="6" value="${esc(rFm.pin||"")}"></div><div class="fld"><label>Private Rate</label><input class="inp" type="number" id="sf-pr" value="${rFm.private_rate||25}"></div><div class="fld"><label>Group Rate</label><input class="inp" type="number" id="sf-gr" value="${rFm.group_rate||20}"></div><div class="fld"><label>Sub Rate</label><input class="inp" type="number" id="sf-sr" value="${rFm.sub_rate||25}"></div><div class="fld c2"><label>Roles</label><div class="row">${["coach","trainee","trainer"].map(r=><button class="cp (rFm.roles∣∣[]).includes(r)?"on":"off""data−role="{(rFm.roles||[]).includes(r)?"on":"off"}" data-role="
+(rFm.roles∣∣[]).includes(r)?"on":"off""data−role="{r}">${r}</button>).join("")}</div></div></div><div class="ea"><button class="btn bp bs" id="sf-save">💾 Save</button><button class="btn bo bs" id="sf-cancel">✕ Cancel</button></div></div>:"";
+return <div class="card"><div class="ch"><div class="ct">Staff</div><button class="btn bp bs" id="add-st">+ Add Staff</button></div><div class="cb">${form}${staff.length===0&&!rAdd?<div class="emp"><div class="ei">👤</div>No staff yet.</div>:""}${staff.filter(s=>rEditId!==s.id).map(s=><div class="lr"><div class="lm"><div class="ln">${esc(s.name)}</div><div class="ls">PIN: <span class="mn">${esc(s.pin)}</span> · $${s.private_rate}/$${s.group_rate} · ${esc(s.roles?.join(", ")||"")}</div></div><div class="la"><span class="bge bn">${esc(s.roles?.[0]||"")}</span><button class="btn bg-btn bi bs" data-esta="${s.id}">✏️</button><button class="btn bg-btn bi bs tdr" data-dsta="${s.id}">🗑</button></div></div>).join("")}</div></div>;
 }
-
 function bindRoster(){
-  // Settings
-  if(document.getElementById("set-url-save"))document.getElementById("set-url-save").onclick=async()=>{const v=document.getElementById("set-url").value.trim();settings.portal_url=v;await dbUpsertSetting("portal_url",v);render();};
-  if(document.getElementById("set-logo-save"))document.getElementById("set-logo-save").onclick=async()=>{const v=document.getElementById("set-logo").value.trim();settings.logo_url=v;await dbUpsertSetting("logo_url",v);render();};
-  // View toggle
-  document.getElementById("rv-stu").onclick=()=>{rView="students";rEditId=null;rAdd=false;render();};
-  document.getElementById("rv-sta").onclick=()=>{rView="staff";rEditId=null;rAdd=false;render();};
-  if(document.getElementById("r-search"))document.getElementById("r-search").oninput=e=>{rSearch=e.target.value;render();};
-
-  if(rView==="students"){
-    if(document.getElementById("add-stu"))document.getElementById("add-stu").onclick=()=>{rFm={pin:gCP(students.map(s=>s.pin)),level:"Level 0",lesson_type_id:"private",frequency:1,subscription_status:"Active",subscription_units:4,makeup_units:0,coach_ids:[]};rAdd=true;rEditId=null;render();};
-    document.querySelectorAll("[data-edit-s]").forEach(btn=>btn.onclick=()=>{const s=students.find(x=>x.id===btn.dataset.editS);if(!s)return;rFm={...s,coach_ids:[...(s.coach_ids||[])]};rEditId=s.id;rAdd=false;render();});
-    document.querySelectorAll("[data-del-s]").forEach(btn=>btn.onclick=async()=>{if(!confirm("Delete student?"))return;await dbDelete("students",btn.dataset.delS);students=students.filter(s=>s.id!==btn.dataset.delS);render();});
-    document.querySelectorAll("[data-rc]").forEach(btn=>btn.onclick=()=>{const id=btn.dataset.rc;const on=(rFm.coach_ids||[]).includes(id);rFm.coach_ids=on?rFm.coach_ids.filter(i=>i!==id):[...(rFm.coach_ids||[]),id];btn.className="cp "+(on?"off":"on");});
-    if(document.getElementById("rf-save"))document.getElementById("rf-save").onclick=async()=>{
-      const fm=getStuFm();if(!fm.name)return;
-      const btn=document.getElementById("rf-save");btn.disabled=true;btn.innerHTML=`<span class="spin"></span>`;
-      if(rEditId){const saved=await dbUpdate("students",rEditId,fm);Object.assign(students.find(s=>s.id===rEditId),fm);}
-      else{const saved=await dbInsert("students",[fm]);students.push(...saved);}
-      rEditId=null;rAdd=false;render();
-    };
-    if(document.getElementById("rf-cancel"))document.getElementById("rf-cancel").onclick=()=>{rEditId=null;rAdd=false;render();};
-  }else{
-    if(document.getElementById("add-sta"))document.getElementById("add-sta").onclick=()=>{rFm={pin:gSP(staff.map(s=>s.pin)),private_rate:25,group_rate:20,sub_rate:25,roles:["coach"],cert_data:{}};rAdd=true;rEditId=null;render();};
-    document.querySelectorAll("[data-edit-sta]").forEach(btn=>btn.onclick=()=>{const s=staff.find(x=>x.id===btn.dataset.editSta);if(!s)return;rFm={...s,roles:[...(s.roles||[])]};rEditId=s.id;rAdd=false;render();});
-    document.querySelectorAll("[data-del-sta]").forEach(btn=>btn.onclick=async()=>{if(!confirm("Delete staff member?"))return;await dbDelete("staff",btn.dataset.delSta);staff=staff.filter(s=>s.id!==btn.dataset.delSta);render();});
-    document.querySelectorAll("[data-role]").forEach(btn=>btn.onclick=()=>{const r=btn.dataset.role;const on=(rFm.roles||[]).includes(r);rFm.roles=on?rFm.roles.filter(x=>x!==r):[...(rFm.roles||[]),r];btn.className="cp "+(on?"off":"on");});
-    if(document.getElementById("sf-save"))document.getElementById("sf-save").onclick=async()=>{
-      const nm=document.getElementById("sf-name")?.value;if(!nm)return;
-      const fm={name:nm,pin:document.getElementById("sf-pin")?.value,private_rate:+document.getElementById("sf-pr")?.value,group_rate:+document.getElementById("sf-gr")?.value,sub_rate:+document.getElementById("sf-sr")?.value,roles:rFm.roles||["coach"],cert_data:rFm.cert_data||{}};
-      const btn=document.getElementById("sf-save");btn.disabled=true;btn.innerHTML=`<span class="spin"></span>`;
-      if(rEditId){await dbUpdate("staff",rEditId,fm);Object.assign(staff.find(s=>s.id===rEditId),fm);}
-      else{const saved=await dbInsert("staff",[fm]);staff.push(...saved);}
-      rEditId=null;rAdd=false;render();
-    };
-    if(document.getElementById("sf-cancel"))document.getElementById("sf-cancel").onclick=()=>{rEditId=null;rAdd=false;render();};
-  }
+if(document.getElementById("set-url-save")) document.getElementById("set-url-save").onclick=async()=>{const v=document.getElementById("set-url").value.trim();await fbSetSetting("portal_url",v);render();};
+if(document.getElementById("set-logo-save")) document.getElementById("set-logo-save").onclick=async()=>{const v=document.getElementById("set-logo").value.trim();await fbSetSetting("logo_url",v);render();};
+document.getElementById("rv-s").onclick=()=>{rView="students";rEditId=null;rAdd=false;render();};
+document.getElementById("rv-st").onclick=()=>{rView="staff";rEditId=null;rAdd=false;render();};
+if(document.getElementById("r-srch")) document.getElementById("r-srch").oninput=e=>{rSearch=e.target.value;render();};
+if(rView==="students"){
+if(document.getElementById("add-s")) document.getElementById("add-s").onclick=()=>{rFm={pin:gCP(students.map(s=>s.pin)),level:"Level 0",lesson_type_id:"private",frequency:1,subscription_status:"Active",subscription_units:4,makeup_units:0,coach_ids:[]};rAdd=true;rEditId=null;render();};
+document.querySelectorAll("[data-es]").forEach(btn=>btn.onclick=()=>{const s=students.find(x=>x.id===btn.dataset.es);if(!s)return;rFm={...s,coach_ids:[...(s.coach_ids||[])]};rEditId=s.id;rAdd=false;render();});
+document.querySelectorAll("[data-ds]").forEach(btn=>btn.onclick=async()=>{if(!confirm("Delete student?"))return;await fbDelete("students",btn.dataset.ds);students=students.filter(s=>s.id!==btn.dataset.ds);render();});
+document.querySelectorAll("[data-rc]").forEach(btn=>btn.onclick=()=>{const id=btn.dataset.rc;const on=(rFm.coach_ids||[]).includes(id);rFm.coach_ids=on?rFm.coach_ids.filter(i=>i!==id):[...(rFm.coach_ids||[]),id];btn.className="cp "+(on?"off":"on");});
+if(document.getElementById("rf-save")) document.getElementById("rf-save").onclick=async()=>{const fm=getSFm();if(!fm.name)return;const btn=document.getElementById("rf-save");btn.disabled=true;btn.innerHTML=<span class="spin"></span>;if(rEditId){await fbUpdate("students",rEditId,fm);Object.assign(students.find(s=>s.id===rEditId),fm);}else{const ns=await fbAdd("students",fm);students.push(ns);}rEditId=null;rAdd=false;render();};
+if(document.getElementById("rf-cancel")) document.getElementById("rf-cancel").onclick=()=>{rEditId=null;rAdd=false;render();};
+}else{
+if(document.getElementById("add-st")) document.getElementById("add-st").onclick=()=>{rFm={pin:gSP(staff.map(s=>s.pin)),private_rate:25,group_rate:20,sub_rate:25,roles:["coach"],cert_data:{}};rAdd=true;rEditId=null;render();};
+document.querySelectorAll("[data-esta]").forEach(btn=>btn.onclick=()=>{const s=staff.find(x=>x.id===btn.dataset.esta);if(!s)return;rFm={...s,roles:[...(s.roles||[])]};rEditId=s.id;rAdd=false;render();});
+document.querySelectorAll("[data-dsta]").forEach(btn=>btn.onclick=async()=>{if(!confirm("Delete staff member?"))return;await fbDelete("staff",btn.dataset.dsta);staff=staff.filter(s=>s.id!==btn.dataset.dsta);render();});
+document.querySelectorAll("[data-role]").forEach(btn=>btn.onclick=()=>{const r=btn.dataset.role;const on=(rFm.roles||[]).includes(r);rFm.roles=on?rFm.roles.filter(x=>x!==r):[...(rFm.roles||[]),r];btn.className="cp "+(on?"off":"on");});
+if(document.getElementById("sf-save")) document.getElementById("sf-save").onclick=async()=>{const nm=document.getElementById("sf-n")?.value;if(!nm)return;const fm={name:nm,pin:document.getElementById("sf-pin")?.value,private_rate:+document.getElementById("sf-pr")?.value,group_rate:+document.getElementById("sf-gr")?.value,sub_rate:+document.getElementById("sf-sr")?.value,roles:rFm.roles||["coach"],cert_data:rFm.cert_data||{}};const btn=document.getElementById("sf-save");btn.disabled=true;btn.innerHTML=<span class="spin"></span>;if(rEditId){await fbUpdate("staff",rEditId,fm);Object.assign(staff.find(s=>s.id===rEditId),fm);}else{const ns=await fbAdd("staff",fm);staff.push(ns);}rEditId=null;rAdd=false;render();};
+if(document.getElementById("sf-cancel")) document.getElementById("sf-cancel").onclick=()=>{rEditId=null;rAdd=false;render();};
 }
-
-// ── Trainee Tab ───────────────────────────────────────────────────────────────
+}
 let ttSel=null,ttSec="admin",ttLvl="Level 0",ttEI=false,ttIFm={},ttAdd=false,ttNN="";
 function traineeTabHTML(){
-  const gA=t=>{const cl=t.progress_data?.adminChecklist||{};return Math.round(ACL.filter(i=>cl[i.id]).length/ACL.length*100)};
-  const gT=t=>{const tc=t.progress_data?.techniques||{};const all=Object.values(TCH).flat();return Math.round(all.filter(x=>tc[x]==="mastered").length/all.length*100)};
-  const gM=t=>{const mp=t.module_progress||{};return Math.round(TM.filter(m=>mp[m.id]?.quizPassed).length/TM.length*100)};
+  const gA=t=>{const cl=t.progress_data?.adminChecklist||{};return Math.round(ACL.filter(i=>cl[i.id]).length/ACL.length*100);};
+  const gT=t=>{const tc=t.progress_data?.techniques||{};const all=Object.values(TCH).flat();return Math.round(all.filter(x=>tc[x]==="mastered").length/all.length*100);};
+  const gM=t=>{const mp=t.module_progress||{};return Math.round(TM.filter(m=>mp[m.id]?.quizPassed).length/TM.length*100);};
   const sel=trainees.find(t=>t.id===ttSel)||null;
-  const addForm=ttAdd?`<div class="ef" style="margin-bottom:10px"><div class="fld"><label>Trainee Name</label><input class="inp" id="tt-nn" value="${esc(ttNN)}" placeholder="Full name..." autofocus></div><div class="ea"><button class="btn bp bs" id="tt-add-ok">💾 Add</button><button class="btn bo bs" id="tt-add-no">✕</button></div></div>`:"";
-  const cards=trainees.map(t=>`<div class="lr" style="cursor:pointer;flex-direction:column;align-items:flex-start;background:${ttSel===t.id?"var(--pl)":t.promoted?"var(--kl)":""};border:1px solid ${ttSel===t.id?"var(--pr)":t.promoted?"#6ee7b7":"var(--bd)"}" data-tt-sel="${t.id}">
-    <div class="rbt" style="width:100%;margin-bottom:6px">
-      <span style="font-weight:600">${esc(t.name)}${t.promoted?`<span style="font-size:10px;color:var(--ok);margin-left:4px">✓ Coach</span>`:""}</span>
-      <div class="row">
-        ${!t.promoted?`<button class="btn bg-btn bi bs" style="color:var(--pr)" data-tt-prev="${t.id}" title="Preview POV">👁</button>`:""}
-        ${!t.promoted?`<button class="btn bg-btn bi bs tdr" data-tt-del="${t.id}">🗑</button>`:""}
-      </div>
-    </div>
-    <div style="font-size:11px;color:var(--t2);margin-bottom:6px">${t.promoted?"Promoted "+esc(t.promoted_date):"Started "+esc(t.start_date)}</div>
-    <div class="row" style="gap:4px;flex-wrap:wrap"><span class="bge bb">Admin ${gA(t)}%</span><span class="bge bg2">Skills ${gT(t)}%</span><span class="bge bn">Modules ${gM(t)}%</span></div>
-  </div>`).join("");
-
+  const addForm=ttAdd?`<div class="ef" style="margin-bottom:10px"><div class="fld"><label>Trainee Name</label><input class="inp" id="tt-nn" value="${esc(ttNN)}" placeholder="Full name..."></div><div class="ea"><button class="btn bp bs" id="tt-add-ok">💾 Add</button><button class="btn bo bs" id="tt-add-no">✕</button></div></div>`:"";
+  const cards=trainees.map(t=>`<div class="lr" style="cursor:pointer;flex-direction:column;align-items:flex-start;background:{ttSel===t.id?"var(--pl)":t.promoted?"var(--kl)":""};border:1px solid ${ttSel===t.id?"var(--pr)":t.promoted?"#6ee7b7":"var(--bd)"}" data-tts="
+{t.id}"><div class="rbt" style="width:100%;margin-bottom:6px"><span style="font-weight:600">esc(t.name){esc(t.name)}
+esc(t.name){t.promoted?`<span style="font-size:10px;color:var(--ok);margin-left:4px">✓ Coach</span>`:""}</span><div class="row">{!t.promoted?`<button class="btn bg-btn bi bs" style="color:var(--pr)" data-ttp="
+{t.id}" title="Preview">👁</button>`:""} {!t.promoted?`<button class="btn bg-btn bi bs tdr" data-ttd="
+{t.id}">🗑</button>`:""}</div></div><div style="font-size:11px;color:var(--t2);margin-bottom:6px">${t.promoted?"Promoted "+esc(t.promoted_date):"Started "+esc(t.start_date)}</div><div class="row" style="gap:4px;flex-wrap:wrap"><span class="bge bb">Admin ${gA(t)}%</span><span class="bge bg2">Skills ${gT(t)}%</span><span class="bge bn">Modules ${gM(t)}%</span></div></div>`).join("");
   let detail="";
   if(sel){
-    const mpPanel=`<div style="background:var(--nv);border-radius:8px;padding:10px 14px;margin-bottom:12px;color:#fff">
-      <div style="font-size:11px;color:#90e0ef;font-weight:700;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Module Progress</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:6px">
-        ${TM.map(m=>{const mp=sel.module_progress||{};const p=mp[m.id]||{};return`<div style="background:rgba(255,255,255,.08);border-radius:6px;padding:5px 8px"><div style="font-size:10px;color:rgba(255,255,255,.6)">${m.label}</div><div style="font-size:11px;margin-top:1px">${p.quizPassed?"✅ Passed":p.read?"📖 Read":"⬜ Not started"}</div></div>`;}).join("")}
-      </div></div>`;
-    const infoEdit=ttEI?`<div class="ef" style="margin-bottom:12px"><div class="g2"><div class="fld"><label>Name</label><input class="inp" id="tt-ei-n" value="${esc(ttIFm.name||"")}"></div><div class="fld"><label>Start Date</label><input class="inp" type="date" id="tt-ei-d" value="${esc(ttIFm.start_date||"")}"></div></div></div>`:"";
-    const secContent=ttSec==="admin"?ACL.map(item=>{const ck=sel.progress_data?.adminChecklist?.[item.id]||false;return`<div class="cr${ck?" ck":""}" data-tt-acl="${item.id}"><div class="cbx${ck?" on":""}"></div><span class="cr-lbl">${item.label}</span></div>`;}).join(""):
-    ttSec==="curriculum"?CLS.map(lv=>`<div style="margin-bottom:14px"><div style="font-weight:600;margin-bottom:6px">${lv}</div><div class="g3">${[{id:"readCurriculum",l:"Read"},{id:"passedQuiz",l:"Quiz"},{id:"passedVerbal",l:"Verbal"}].map(item=>{const ck=sel.progress_data?.curriculum?.[lv]?.[item.id]||false;return`<div class="cr${ck?" ck":""}" data-tt-cur="${lv}|${item.id}"><div class="cbx${ck?" on":""}"></div><span class="cr-lbl" style="font-size:12px">${item.l}</span></div>`;}).join("")}</div></div>`).join(""):
-    `<div><div class="stb" style="margin-bottom:10px">${[...CLS,"General"].map(l=>`<button class="cp ${ttLvl===l?"on":"off"}" data-tt-lvl="${l}">${l}</button>`).join("")}</div>
-    <div style="font-size:11px;color:var(--t2);margin-bottom:8px">○ Not · 👁 Watched · 💪 Practiced · ✅ Mastered — tap to cycle</div>
-    <div class="tg">${(TCH[ttLvl]||[]).map(tech=>{const s=sel.progress_data?.techniques?.[tech]||"none";const cls={none:"t0",watched:"t1",practiced:"t2",mastered:"t3"}[s];const ic=s==="watched"?"👁":s==="practiced"?"💪":s==="mastered"?"✅":"○";return`<div class="ti ${cls}" data-tt-tech="${esc(tech)}">${esc(tech)} <span>${ic}</span></div>`;}).join("")}</div></div>`;
-
-    detail=`<div class="card"><div class="ch">
-      <div><div class="ct">${esc(sel.name)}</div><div class="cd">${sel.promoted?"✓ Promoted "+esc(sel.promoted_date):"Started "+esc(sel.start_date)}</div></div>
-      <div class="row">
-        ${!sel.promoted?`<button class="btn bs" style="background:var(--ok);color:#fff" id="tt-promote">🎓 Promote to Coach</button>`:""}
-        ${!sel.promoted&&!ttEI?`<button class="btn bo bs" id="tt-ei">✏️</button>`:""}
-        ${ttEI?`<div class="row"><button class="btn bp bs" id="tt-ei-save">💾</button><button class="btn bo bs" id="tt-ei-cancel">✕</button></div>`:""}
-      </div>
-    </div><div class="cb">
-      ${infoEdit}${mpPanel}
-      <div class="stb">${["admin","curriculum","techniques"].map(s=>`<button class="cp ${ttSec===s?"on":"off"}" data-tt-sec="${s}">${s==="admin"?"Admin Checklist":s==="curriculum"?"Curriculum":"Techniques"}</button>`).join("")}</div>
-      ${secContent}
-      <div class="dvd"></div>
-      <div class="fld"><label>Notes</label><textarea class="txa" rows="3" id="tt-notes" placeholder="Notes…">${esc(sel.notes||"")}</textarea></div>
-    </div></div>`;
+    const mpPanel=`<div style="background:var(--nv);border-radius:8px;padding:10px 14px;margin-bottom:12px;color:#fff"><div style="font-size:11px;color:#90e0ef;font-weight:700;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Module Progress</div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:6px">{TM.map(m=>{const mp=sel.module_progress||{};const p=mp[m.id]||{};return`<div style="background:rgba(255,255,255,.08);border-radius:6px;padding:5px 8px"><div style="font-size:10px;color:rgba(255,255,255,.6)">
+{m.label}</div><div style="font-size:11px;margin-top:1px">${p.quizPassed?"✅ Passed":p.read?"📖 Read":"⬜ Not started"}</div></div>`;}).join("")}</div></div>`;
+    const infoEdit=ttEI?`<div class="ef" style="margin-bottom:12px"><div class="g2"><div class="fld"><label>Name</label><input class="inp" id="tt-ei-n" value="esc(ttIFm.name∣∣"")"></div><divclass="fld"><label>StartDate</label><inputclass="inp"type="date"id="tt−ei−d"value="{esc(ttIFm.name||"")}"></div><div class="fld"><label>Start Date</label><input class="inp" type="date" id="tt-ei-d" value="
+esc(ttIFm.name∣∣"")"></div><divclass="fld"><label>StartDate</label><inputclass="inp"type="date"id="tt−ei−d"value="{esc(ttIFm.start_date||"")}"></div></div></div>`:"";
+    const secContent=ttSec==="admin"?ACL.map(item=>{const ck=sel.progress_data?.adminChecklist?.[item.id]||false;return`<div class="crck?"ck":"""data−acl="{ck?" ck":""}" data-acl="
+ck?"ck":"""data−acl="{item.id}"><div class="cbxck?"on":"""></div><spanclass="cr−lbl">{ck?" on":""}"></div><span class="cr-lbl">
+ck?"on":"""></div><spanclass="cr−lbl">{item.label}</span></div>`;}).join(""):ttSec==="curriculum"?CLS.map(lv=>`<div style="margin-bottom:14px"><div style="font-weight:600;margin-bottom:6px">lv</div><divclass="g3">{lv}</div><div class="g3">
+lv</div><divclass="g3">{[{id:"readCurriculum",l:"Read"},{id:"passedQuiz",l:"Quiz"},{id:"passedVerbal",l:"Verbal"}].map(item=>{const ck=sel.progress_data?.curriculum?.[lv]?.[item.id]||false;return`<div class="crck?"ck":"""data−cur="{ck?" ck":""}" data-cur="
+ck?"ck":"""data−cur="{lv}|item.id"><divclass="cbx{item.id}"><div class="cbx
+item.id"><divclass="cbx{ck?" on":""}"></div><span class="cr-lbl" style="font-size:12px">{item.l}</span></div>`;}).join("")}</div></div>`).join(""):`<div><div class="stb" style="margin-bottom:10px">
+{[...CLS,"General"].map(l=>`<button class="cp ttLvl===l?"on":"off""data−ttlv="{ttLvl===l?"on":"off"}" data-ttlv="
+ttLvl===l?"on":"off""data−ttlv="{l}">{l}</button>`).join("")}</div><div style="font-size:11px;color:var(--t2);margin-bottom:8px">○ Not · 👁 Watched · 💪 Practiced · ✅ Mastered — tap to cycle</div><div class="tg">
+{(TCH[ttLvl]||[]).map(tech=>{const s=sel.progress_data?.techniques?.[tech]||"none";const cls={none:"t0",watched:"t1",practiced:"t2",mastered:"t3"}[s];const ic=s==="watched"?"👁":s==="practiced"?"💪":s==="mastered"?"✅":"○";return`<div class="ti cls"data−tech="{cls}" data-tech="
+cls"data−tech="{esc(tech)}">esc(tech)<span>{esc(tech)} <span>
+esc(tech)<span>{ic}</span></div>`;}).join("")}</div></div>`;
+    detail=`<div class="card"><div class="ch"><div><div class="ct">esc(sel.name)</div><divclass="cd">{esc(sel.name)}</div><div class="cd">
+esc(sel.name)</div><divclass="cd">{sel.promoted?"✓ Promoted "+esc(sel.promoted_date):"Started "+esc(sel.start_date)}</div></div><div class="row">{!sel.promoted?`<button class="btn bs" style="background:var(--ok);color:#fff" id="tt-promote">🎓 Promote to Coach</button>`:""} ${!sel.promoted&&!ttEI?`<button class="btn bo bs" id="tt-ei">✏️</button>`:""} ${ttEI?`<div class="row"><button class="btn bp bs" id="tt-ei-save">💾</button><button class="btn bo bs" id="tt-ei-cancel">✕</button></div>`:""}</div></div><div class="cb">
+{infoEdit}mpPanel<divclass="stb">{mpPanel}<div class="stb">
+mpPanel<divclass="stb">{["admin","curriculum","techniques"].map(s=>`<button class="cp ttSec===s?"on":"off""data−tts2="{ttSec===s?"on":"off"}" data-tts2="
+ttSec===s?"on":"off""data−tts2="{s}">{s==="admin"?"Admin Checklist":s==="curriculum"?"Curriculum":"Techniques"}</button>`).join("")}</div>
+{secContent}<div class="dvd"></div><div class="fld"><label>Notes</label><textarea class="txa" rows="3" id="tt-notes">${esc(sel.notes||"")}</textarea></div></div></div>`;
   }
-  return `<div class="card"><div class="ch"><div class="ct">Trainee Tracker</div><button class="btn bp bs" id="tt-add-btn">+ Add</button></div><div class="cb">
-    ${addForm}${trainees.length===0&&!ttAdd?`<div class="emp"><div class="ei">🎓</div>No trainees yet</div>`:""}
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px">${cards}</div>
-  </div></div>${detail}`;
+  return `<div class="card"><div class="ch"><div class="ct">Trainee Tracker</div><button class="btn bp bs" id="tt-add">+ Add</button></div><div class="cb">addForm{addForm}
+addForm{trainees.length===0&&!ttAdd?`<div class="emp"><div class="ei">🎓</div>No trainees yet</div>`:""}<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px">cards</div></div></div>{cards}</div></div></div>
+cards</div></div></div>{detail}`;
 }
-
-async function updateTraineeProgress(t) {
-  await dbUpdate("trainees",t.id,{progress_data:t.progress_data,notes:t.notes||""});
-}
-
 function bindTraineeTab(){
-  document.getElementById("tt-add-btn").onclick=()=>{ttAdd=true;ttNN="";render();};
-  if(document.getElementById("tt-add-ok")){
-    document.getElementById("tt-add-ok").onclick=async()=>{
-      const nm=(document.getElementById("tt-nn")?.value||"").trim();if(!nm)return;
-      const btn=document.getElementById("tt-add-ok");btn.disabled=true;btn.innerHTML=`<span class="spin"></span>`;
-      const data={name:nm,start_date:new Date().toISOString().split("T")[0],notes:"",progress_data:{adminChecklist:{},curriculum:{},techniques:{}},module_progress:{},promoted:false,promoted_date:""};
-      const saved=await dbInsert("trainees",[data]);
-      trainees.push(...saved);ttAdd=false;ttNN="";ttSel=saved[0]?.id;ttSec="admin";render();
-    };
-    document.getElementById("tt-add-no").onclick=()=>{ttAdd=false;render();};
-    document.getElementById("tt-nn").oninput=e=>{ttNN=e.target.value;};
-    document.getElementById("tt-nn").onkeydown=e=>{if(e.key==="Enter")document.getElementById("tt-add-ok").click();};
-  }
-  document.querySelectorAll("[data-tt-sel]").forEach(el=>el.onclick=e=>{if(e.target.closest("button"))return;ttSel=el.dataset.ttSel;ttSec="admin";ttEI=false;render();});
-  document.querySelectorAll("[data-tt-del]").forEach(btn=>btn.onclick=async e=>{e.stopPropagation();if(!confirm("Delete trainee?"))return;await dbDelete("trainees",btn.dataset.ttDel);trainees=trainees.filter(t=>t.id!==btn.dataset.ttDel);if(ttSel===btn.dataset.ttDel)ttSel=null;render();});
-  document.querySelectorAll("[data-tt-prev]").forEach(btn=>btn.onclick=async e=>{e.stopPropagation();const t=trainees.find(x=>x.id===btn.dataset.ttPrev);if(t){preview={name:t.name};render();}});
+  document.getElementById("tt-add").onclick=()=>{ttAdd=true;ttNN="";render();};
+  if(document.getElementById("tt-add-ok")){document.getElementById("tt-add-ok").onclick=async()=>{const nm=(document.getElementById("tt-nn")?.value||"").trim();if(!nm)return;const btn=document.getElementById("tt-add-ok");btn.disabled=true;btn.innerHTML=`<span class="spin"></span>`;const data={name:nm,start_date:new Date().toISOString().split("T")[0],notes:"",progress_data:{adminChecklist:{},curriculum:{},techniques:{}},module_progress:{},promoted:false,promoted_date:""};const ns=await fbAdd("trainees",data);trainees.push(ns);ttAdd=false;ttNN="";ttSel=ns.id;ttSec="admin";render();};document.getElementById("tt-add-no").onclick=()=>{ttAdd=false;render();};document.getElementById("tt-nn").oninput=e=>{ttNN=e.target.value;};document.getElementById("tt-nn").onkeydown=e=>{if(e.key==="Enter")document.getElementById("tt-add-ok").click();};}
+  document.querySelectorAll("[data-tts]").forEach(el=>el.onclick=e=>{if(e.target.closest("button"))return;ttSel=el.dataset.tts;ttSec="admin";ttEI=false;render();});
+  document.querySelectorAll("[data-ttd]").forEach(btn=>btn.onclick=async e=>{e.stopPropagation();if(!confirm("Delete trainee?"))return;await fbDelete("trainees",btn.dataset.ttd);trainees=trainees.filter(t=>t.id!==btn.dataset.ttd);if(ttSel===btn.dataset.ttd)ttSel=null;render();});
+  document.querySelectorAll("[data-ttp]").forEach(btn=>btn.onclick=e=>{e.stopPropagation();const t=trainees.find(x=>x.id===btn.dataset.ttp);if(t){preview={name:t.name};render();}});
   const sel=trainees.find(t=>t.id===ttSel)||null;
   if(!sel)return;
-  if(document.getElementById("tt-promote"))document.getElementById("tt-promote").onclick=async()=>{
-    if(!confirm("Promote "+sel.name+" to Coach?"))return;
-    const s=staff.find(x=>x.name===sel.name);
-    if(s){s.roles=[...(s.roles||[]).filter(r=>r!=="trainee"),"coach"];await dbUpdate("staff",s.id,{roles:s.roles});}
-    sel.promoted=true;sel.promoted_date=new Date().toISOString().split("T")[0];
-    await dbUpdate("trainees",sel.id,{promoted:true,promoted_date:sel.promoted_date});
-    ttSel=null;render();
-  };
-  if(document.getElementById("tt-ei"))document.getElementById("tt-ei").onclick=()=>{ttIFm={name:sel.name,start_date:sel.start_date};ttEI=true;render();};
-  if(document.getElementById("tt-ei-save"))document.getElementById("tt-ei-save").onclick=async()=>{sel.name=document.getElementById("tt-ei-n").value;sel.start_date=document.getElementById("tt-ei-d").value;await dbUpdate("trainees",sel.id,{name:sel.name,start_date:sel.start_date});ttEI=false;render();};
-  if(document.getElementById("tt-ei-cancel"))document.getElementById("tt-ei-cancel").onclick=()=>{ttEI=false;render();};
-  document.querySelectorAll("[data-tt-sec]").forEach(btn=>btn.onclick=()=>{ttSec=btn.dataset.ttSec;render();});
-  document.querySelectorAll("[data-tt-lvl]").forEach(btn=>btn.onclick=()=>{ttLvl=btn.dataset.ttLvl;render();});
-  document.querySelectorAll("[data-tt-acl]").forEach(el=>el.onclick=async()=>{
-    const id=el.dataset.ttAcl;sel.progress_data.adminChecklist={...sel.progress_data?.adminChecklist,[id]:!sel.progress_data?.adminChecklist?.[id]};
-    await updateTraineeProgress(sel);render();
-  });
-  document.querySelectorAll("[data-tt-cur]").forEach(el=>el.onclick=async()=>{
-    const[lv,f]=el.dataset.ttCur.split("|");sel.progress_data.curriculum=sel.progress_data.curriculum||{};sel.progress_data.curriculum[lv]=sel.progress_data.curriculum[lv]||{};sel.progress_data.curriculum[lv][f]=!sel.progress_data.curriculum[lv][f];
-    await updateTraineeProgress(sel);render();
-  });
-  document.querySelectorAll("[data-tt-tech]").forEach(el=>el.onclick=async()=>{
-    const tech=el.dataset.ttTech;const st=["none","watched","practiced","mastered"];const cur=sel.progress_data?.techniques?.[tech]||"none";const nx=st[(st.indexOf(cur)+1)%st.length];sel.progress_data.techniques={...sel.progress_data?.techniques,[tech]:nx};
-    await updateTraineeProgress(sel);render();
-  });
-  if(document.getElementById("tt-notes"))document.getElementById("tt-notes").onchange=async e=>{sel.notes=e.target.value;await dbUpdate("trainees",sel.id,{notes:sel.notes});};
+  if(document.getElementById("tt-promote")) document.getElementById("tt-promote").onclick=async()=>{if(!confirm("Promote "+sel.name+" to Coach?"))return;const s=staff.find(x=>x.name===sel.name);if(s){s.roles=[...(s.roles||[]).filter(r=>r!=="trainee"),"coach"];await fbUpdate("staff",s.id,{roles:s.roles});}sel.promoted=true;sel.promoted_date=new Date().toISOString().split("T")[0];await fbUpdate("trainees",sel.id,{promoted:true,promoted_date:sel.promoted_date});ttSel=null;render();};
+  if(document.getElementById("tt-ei")) document.getElementById("tt-ei").onclick=()=>{ttIFm={name:sel.name,start_date:sel.start_date};ttEI=true;render();};
+  if(document.getElementById("tt-ei-save")) document.getElementById("tt-ei-save").onclick=async()=>{sel.name=document.getElementById("tt-ei-n").value;sel.start_date=document.getElementById("tt-ei-d").value;await fbUpdate("trainees",sel.id,{name:sel.name,start_date:sel.start_date});ttEI=false;render();};
+  if(document.getElementById("tt-ei-cancel")) document.getElementById("tt-ei-cancel").onclick=()=>{ttEI=false;render();};
+  document.querySelectorAll("[data-tts2]").forEach(btn=>btn.onclick=()=>{ttSec=btn.dataset.tts2;render();});
+  document.querySelectorAll("[data-ttlv]").forEach(btn=>btn.onclick=()=>{ttLvl=btn.dataset.ttlv;render();});
+  document.querySelectorAll("[data-acl]").forEach(el=>el.onclick=async()=>{const id=el.dataset.acl;sel.progress_data.adminChecklist={...sel.progress_data?.adminChecklist,[id]:!sel.progress_data?.adminChecklist?.[id]};await fbUpdate("trainees",sel.id,{progress_data:sel.progress_data});render();});
+  document.querySelectorAll("[data-cur]").forEach(el=>el.onclick=async()=>{const[lv,f]=el.dataset.cur.split("|");sel.progress_data.curriculum=sel.progress_data.curriculum||{};sel.progress_data.curriculum[lv]=sel.progress_data.curriculum[lv]||{};sel.progress_data.curriculum[lv][f]=!sel.progress_data.curriculum[lv][f];await fbUpdate("trainees",sel.id,{progress_data:sel.progress_data});render();});
+  document.querySelectorAll("[data-tech]").forEach(el=>el.onclick=async()=>{const tech=el.dataset.tech;const st=["none","watched","practiced","mastered"];const cur=sel.progress_data?.techniques?.[tech]||"none";const nx=st[(st.indexOf(cur)+1)%st.length];sel.progress_data.techniques={...sel.progress_data?.techniques,[tech]:nx};await fbUpdate("trainees",sel.id,{progress_data:sel.progress_data});render();});
+  if(document.getElementById("tt-notes")) document.getElementById("tt-notes").onchange=async e=>{sel.notes=e.target.value;await fbUpdate("trainees",sel.id,{notes:sel.notes});};
 }
-
-// ── Start ─────────────────────────────────────────────────────────────────────
-init();
 </script>
 </body>
 </html>
